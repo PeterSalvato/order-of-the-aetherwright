@@ -14,31 +14,18 @@ A symbolic execution string used to encode creative process phases using domain 
 
 \## Syntax Reference
 
-\| Symbol \| Meaning \|
-\|--------\|---------\|
-\| `/.../` \| Container for entire codex string \|
-\| `Æ` \| Protocol identifier (Ætherwright Codex) \|
-\| `#` \| Grid/initiation – first conscious mark or structural cut \|
-\| `|` `||` `|||` \| Phase 1, 2, 3... \|
-\| `●` \| Input/research phase (non-domain, pre-action) \|
-\| `∅` \| Null phase – no domains active \|
-\| Glyphs \| Active domains (see `glyphs.md`) \|
-\| `⟩` / `⟩⟩` \| Completion state \|
-\| `~` / `×` \| Ongoing / aborted \|
-\| `[path]` \| Dot-delimited project identifier \|
-
-
-## Glyph Quick Reference
-
-- `▲` → UX / Systems / Strategy
-- `▼` → Narrative / Language
-- `◀` → Intuition / Reflection
-- `▶` → Illustration / Expression
-- `■` → Design / Grid / Typography
-- `◆` → Craft / Physical Work
-- `⬟` → Photography / Observation
-- `⬣` → Code / Engineering / Logic
-- `●` → Input / Research / Study
+- `/.../` → Container for entire Codex string
+- `Æ` → Protocol identifier (Ætherwright Codex)
+- `#` → Grid/initiation – the first structural or symbolic cut
+- `|` `||` `|||` → Phase markers (Phase 1, Phase 2, Phase 3, etc.)
+- `●` → Input / research / orientation phase (not a domain)
+- `∅` → Null phase (no domains active)
+- Domain glyphs → Represent active domains (see `glyphs.md`)
+- `⟩` → Completed but not released
+- `⟩⟩` → Completed and released
+- `~` → Ongoing / perpetual state
+- `×` → Aborted / discarded
+- `[path]` → Dot-delimited project identifier or namespace
 
 ---
 
@@ -50,6 +37,20 @@ A symbolic execution string used to encode creative process phases using domain 
 - `∅` is valid within a phase but not at the end.
 - All symbols must be Unicode-safe and render in monospaced environments.
 - Spaces are discouraged—use compressed format for maximum clarity.
+
+---
+
+\## Domain Reuse and Relational Proof
+
+Domain glyphs may repeat across phases.
+
+This is intentional.
+
+The Codex string is not a checklist of domains used—it is a **relational proof** of how different faculties interacted *across time*. When a domain appears multiple times, it reflects its **evolution** and **changing role** in the creative process.
+
+A glyph like `▶` might first appear in a sketching context, then return in a later phase as final rendering—symbolically representing **refinement**, **transformation**, or **domain continuity**.
+
+Each repetition matters.
 
 ---
 
@@ -80,6 +81,7 @@ A symbolic execution string used to encode creative process phases using domain 
 \## Usage Context
 
 Codex strings are intended for:
+
 - Margins and footers of digital or printed works
 - Archival headers in notebooks or logs
 - Symbolic signature of creative process
