@@ -27,6 +27,19 @@ A symbolic execution string used to encode creative process phases using domain 
 \| `~` / `×` \| Ongoing / aborted \|
 \| `[path]` \| Dot-delimited project identifier \|
 
+
+## Glyph Quick Reference
+
+- `▲` → UX / Systems / Strategy
+- `▼` → Narrative / Language
+- `◀` → Intuition / Reflection
+- `▶` → Illustration / Expression
+- `■` → Design / Grid / Typography
+- `◆` → Craft / Physical Work
+- `⬟` → Photography / Observation
+- `⬣` → Code / Engineering / Logic
+- `●` → Input / Research / Study
+
 ---
 
 \## Rules
