@@ -111,4 +111,14 @@ To inquire about licensed usage or collaboration, contact:
 _The glyphs do not initiate.  
 But they do recognize who you are._
 
+---
+
+## Author
+
+[Peter Salvato](https://petersalvato.com) — Systems architect. Design, engineering, strategy.
+
+**Full case study:** [petersalvato.com/protocols/order-of-the-aetherwright/](https://petersalvato.com/protocols/order-of-the-aetherwright/)
+
+- Email: peter@petersalvato.com
+- LinkedIn: [linkedin.com/in/petersalvato](https://linkedin.com/in/petersalvato)
 
