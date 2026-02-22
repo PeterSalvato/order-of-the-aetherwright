@@ -1,0 +1,24 @@
+# Order of the Ætherwright
+
+> A symbolic operating system for creative practice. Glyphs, ritual, codex.
+
+## About
+
+Thirty years of consistent method across design, engineering, and strategy — existing as instinct without explicit structure. Creative method drifts incrementally through drift, not catastrophe.
+
+The Order is a symbolic operating system: glyphs for domain classification (red = logic/principle, green = expression/craft, blue = utility/function), a Morning Alignment ritual for daily grounding, and a Codex as institutional source of truth. Not a persona. A governance framework that holds creative identity under scale.
+
+The glyph system governs Peter Salvato's entire portfolio. The framework now holds itself explicitly.
+
+## Author
+
+Peter Salvato — Systems architect.
+Website: https://petersalvato.com
+Full case study: https://petersalvato.com/protocols/order-of-the-aetherwright/
+Source code: https://github.com/PeterSalvato/order-of-the-aetherwright
+
+## Contact
+
+Email: peter@petersalvato.com
+GitHub: https://github.com/petersalvato
+LinkedIn: https://linkedin.com/in/petersalvato
