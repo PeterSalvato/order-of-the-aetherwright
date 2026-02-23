@@ -15,7 +15,9 @@ This file defines key symbolic terms used throughout the Ætherwright System.
 
 ---
 
-## Command Language (Planned Shell Aliases)
+## Command Language (Planned)
+
+These shell aliases are designed but not yet implemented:
 
 | Alias | Meaning |
 |-------|---------|
@@ -24,6 +26,20 @@ This file defines key symbolic terms used throughout the Ætherwright System.
 | `invoke` | Run symbolic actions or rituals |
 | `sigil` | Visual or printable symbol preview |
 | `benchplate` | Generate or label project environment metadata |
+
+---
+
+## Core Symbolic Terms
+
+| Term | Meaning |
+|------|---------|
+| **Ætherwright** | A practitioner who refines meaning through intentional form |
+| **Frame** | A conceptual unit, philosophical perspective, or domain of operation |
+| **Reel** | A larger cycle or body of work, composed of Frames |
+| **Sigil** | The core symbolic mark encoding the system's logic and identity |
+| **Glyph** | A semantic icon representing conceptual domains or practitioner roles |
+| **Echo** | A saved resonance or reflection — a signal captured from inner refinement |
+| **Drop Kit** | The symbolic starter kit for entering the system (planned) |
 
 ---
 
