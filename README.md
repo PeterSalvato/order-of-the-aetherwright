@@ -67,7 +67,7 @@ Learn more in [`doctrine/manifesto.md`](./doctrine/manifesto.md) and [`doctrine/
 
 ## The Sigil
 
-The Sigil of the Order is a central visual mark rooted in dynamic symmetry. It embodies the core principles and philosophies of the Ætherwright. The Sigil is located in the `sigils/` directory as `the-sigil.png`. This symbol is protected under the terms of this repository's license.
+The Sigil of the Order is a central visual mark rooted in dynamic symmetry. It embodies the core principles and philosophies of the Ætherwright. The Sigil is located at [`assets/sigils/sigil.full.lowRes.png`](./assets/sigils/sigil.full.lowRes.png). This symbol is protected under the terms of this repository's license.
 
 ---
 

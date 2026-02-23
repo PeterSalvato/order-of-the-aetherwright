@@ -1,4 +1,4 @@
-\# The Codex as Relational Proof  
+# The Codex as Relational Proof  
 *An Interpretive Framework for Ætherwright Symbolic Execution*
 
 ---
@@ -7,7 +7,7 @@ The Codex is not simply a checklist of domains used in a project. It is a **symb
 
 ---
 
-\## Domains as Vectors, Not Labels
+## Domains as Vectors, Not Labels
 
 Each glyph in the Codex marks the **engagement** of a specific domain—`UX`, `Narrative`, `Illustration`, `Design`, etc. But the Codex also encodes:
 
@@ -19,7 +19,7 @@ In this way, the Codex is not just symbolic. It is a **compressed programmatic l
 
 ---
 
-\## Repetition Reflects Refinement
+## Repetition Reflects Refinement
 
 A domain may appear in multiple phases. This is not redundancy—it is **narrative structure**.
 
@@ -31,7 +31,7 @@ This repetition creates symbolic contrast: it suggests that drawing was **revisi
 
 ---
 
-\## Inputs Precede Interaction
+## Inputs Precede Interaction
 
 The glyph `●` signals **input, research, or contextual orientation**.
 
@@ -44,7 +44,7 @@ This reinforces the principle that **action follows awareness**.
 
 ---
 
-\## The Codex as Creative Archaeology
+## The Codex as Creative Archaeology
 
 Each Codex string can be read backward or forward:
 
@@ -55,7 +55,7 @@ It becomes a tool not just for **describing** a project, but for **decoding** it
 
 ---
 
-\## Usage in Practice
+## Usage in Practice
 
 Codex strings may be:
 

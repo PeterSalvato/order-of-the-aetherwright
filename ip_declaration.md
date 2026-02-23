@@ -17,8 +17,8 @@ This IP declaration applies to the following original contributions:
 
 - The naming and construction of the **Order of the Ætherwright** as a system  
 - The framework of “sovereign cognition” and symbolic operating systems  
-- The system of directories and structural components, including:  
-  - `doctrine/`, `language/`, `ritual/`, `overlays/`, and `install/`  
+- The system of directories and structural components, including:
+  - `doctrine/`, `assets/`, and any future directories added to this repository
 - The terminology and syntax of the Ætherwright system (e.g., “frame,” “overlay,” “glyph logic,” “ritual layer”)  
 - The visual-symbolic system of glyphs, structure, and classification  
 - The philosophical stance and documented doctrine presented in this repository

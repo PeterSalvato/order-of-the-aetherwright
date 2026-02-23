@@ -1,10 +1,10 @@
-\# Ætherwright Codex Syntax v1.1
+# Ætherwright Codex Syntax v1.1
 
 A symbolic execution string used to encode creative process phases using domain glyphs. Codex lines are rendered in plaintext using Unicode and are compatible with terminal, markdown, print, and archival contexts.
 
 ---
 
-\## Format
+## Format
 
 ```
 /Æ/#|●▼||▲◆|||▶⬣⟩⟩[projects.versograms.cherubrock]/
@@ -12,7 +12,7 @@ A symbolic execution string used to encode creative process phases using domain 
 
 ---
 
-\## Syntax Reference
+## Syntax Reference
 
 - `/.../` → Container for entire Codex string
 - `Æ` → Protocol identifier (Ætherwright Codex)
@@ -29,7 +29,7 @@ A symbolic execution string used to encode creative process phases using domain 
 
 ---
 
-\## Rules
+## Rules
 
 - Must begin with `#` and end with a terminal state symbol.
 - May contain 1 to N phases.
@@ -40,7 +40,7 @@ A symbolic execution string used to encode creative process phases using domain 
 
 ---
 
-\## Domain Reuse and Relational Proof
+## Domain Reuse and Relational Proof
 
 Domain glyphs may repeat across phases.
 
@@ -54,31 +54,31 @@ Each repetition matters.
 
 ---
 
-\## Examples
+## Examples
 
-\### Full Process (3 phases, released)
+### Full Process (3 phases, released)
 ```
 /Æ/#|●▼||▲◆|||▶⬣⟩⟩[projects.versograms.cherubrock]/
 ```
 
-\### Input-only Ongoing System
+### Input-only Ongoing System
 ```
 /Æ/#|●||●|||●~[systems.signals]/
 ```
 
-\### Completed, Not Released
+### Completed, Not Released
 ```
 /Æ/#|●||▲⬣|||⬣⟩[systems.savepoint.protocol]/
 ```
 
-\### Null + Output Only
+### Null + Output Only
 ```
 /Æ/#|∅||∅|||▶⟩⟩[studies.miniposters.oneoff]/
 ```
 
 ---
 
-\## Usage Context
+## Usage Context
 
 Codex strings are intended for:
 
