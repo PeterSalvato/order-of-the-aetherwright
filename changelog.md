@@ -81,8 +81,35 @@ These early states are not preserved in a legacy folder but remain available in 
 
 ---
 
+## February 2026 – Repository Cleanup and Narrative Restructure
+
+Removed all empty placeholder directories and .gitkeep files that created the impression of unbuilt features. The repository now contains only real content.
+
+**Removed:**
+- Empty directories: `artifacts/`, `assets/covers/`, `assets/misc/`, `assets/symbols/`, `assets/source/`, `docs/`, `install/`, `language/`, `overlays/`
+- Empty file: `doctrine/invocation.md`
+- Redundant `legal/` directory (consolidated into root `ip_declaration.md`)
+- Redundant `copyright.md` (covered by `license.md`)
+
+**Fixed:**
+- Renamed `doctrine/menifesto.md` → `doctrine/manifesto.md`
+- Fixed escaped markdown (`\#`, `\|`) in `glyphs.md`, `codex.md`, `codex-theory.md`
+- Fixed broken sigil image path in README
+- Updated `ip_declaration.md` to reference current directory structure
+
+**Restructured:**
+- README rewritten: doctrine reading-order table, honest "What Exists Today" vs. "Roadmap" sections
+- `system.md`: Drop Kit, shell aliases, and printables now clearly marked **(Planned)** with status notes
+- `usage.md`: Leads with what's available now (doctrine + practice), separates planned features
+- `terminology.md`: Shell aliases marked as **(Planned)**, added Core Symbolic Terms table
+
+**Added:**
+- `CITATION.cff` for academic/software citation
+- Spoke site files: `index.html`, `CNAME`, `llms.txt`, `robots.txt`, `sitemap.xml`
+
+---
+
 ## Status
 
-The system is now in **public scaffold phase**:  
-All structure is in place. No overlays or functional scripts are released.  
-The Work is live, intentional, protected—and still in progress.
+The doctrine is complete and the repository reflects what actually exists.
+Planned features (overlays, shell aliases, Drop Kit, printables) are documented in the roadmap but no longer occupy empty directories pretending to be real.

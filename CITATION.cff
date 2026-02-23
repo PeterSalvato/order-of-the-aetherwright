@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you reference the Order of the Ætherwright, please cite it as below."
+type: software
+title: "Order of the Ætherwright"
+abstract: "A symbolic operating system for sovereign cognition — a philosophical framework instantiated through ritualized practice, symbolic logic, and intentional interface design."
+version: "0.1"
+date-released: "2025-04-03"
+license: "CC-BY-NC-ND-4.0"
+repository-code: "https://github.com/PeterSalvato/order-of-the-aetherwright"
+url: "https://petersalvato.com/protocols/order-of-the-aetherwright/"
+authors:
+  - family-names: "Salvato"
+    given-names: "Peter"
+    email: "peter@petersalvato.com"
+    website: "https://petersalvato.com"
+keywords:
+  - symbolic system
+  - sovereign cognition
+  - glyph system
+  - codex syntax
+  - creative practice framework
