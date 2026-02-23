@@ -20,18 +20,14 @@ You only need to bring your Work into alignment.
 
 ## What It Contains
 
-This repository serves as the **canonical codex and scaffold** of the Order.  
+This repository serves as the **canonical codex and scaffold** of the Order.
 It includes:
 
 - **Philosophical and symbolic doctrine** (`/doctrine`)
 - **Visual and typographic assets** (`/assets`)
-- **Tactile tools and printables** (`/artifacts`)
-- **Themed overlays for software environments** (`/overlays`)
-- **Shell alias language and symbolic commands** (`/language`)
-- **A ritual installation entrypoint** (`/install/aether-init.sh`)
 
-The system is structured but incomplete.  
-You are witnessing it mid-ritual.
+The system is structured and intentional.
+Future additions — overlays, shell aliases, printables — will arrive when they're ready, not before.
 
 ---
 
@@ -48,8 +44,7 @@ What exists today:
 What is coming:
 - Functional overlays for VSCode, Obsidian, Firefox, and Terminal
 - Shell alias framework (`aetherize`, `fieldlog`, `invoke`)
-- Printable journals, sticker sheets, and 3D-printable glyph stamps
-- Optional pedagogical scaffolding for sovereign practice
+- Printable journals and glyph stamps
 
 All future additions will be released deliberately and without haste.
 
@@ -81,7 +76,7 @@ The Sigil of the Order is a central visual mark rooted in dynamic symmetry. It e
 All symbolic systems, metaphors, marks, overlays, language, glyphs, and structural frameworks are the original intellectual property of **Peter Salvato** and are protected under the following:
 
 - [Creative Commons Attribution–NonCommercial–NoDerivatives 4.0](./license.md)
-- [IP Declaration](./legal/ip_declaration.md)
+- [IP Declaration](./ip_declaration.md)
 
 You may not remix, repackage, or fork any part of this system.  
 You may share and reference with attribution.
