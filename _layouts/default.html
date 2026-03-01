@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <div class="site-wrapper">
+    <nav class="site-nav">
+      <a href="{{ '/' | relative_url }}" class="nav-home">
+        <img src="{{ '/assets/sigils/sigil.full.lowRes.png' | relative_url }}" alt="Sigil" class="nav-sigil">
+        <span>Order of the Ætherwright</span>
+      </a>
+      <ul class="nav-doctrine">
+        {% assign ordered_doctrine = site.doctrine | sort: "order" %}
+        {% for doc in ordered_doctrine %}
+        <li{% if page.url == doc.url %} class="active"{% endif %}>
+          <a href="{{ doc.url | relative_url }}">{{ doc.nav_title | default: doc.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <main class="site-content">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </div>
+</body>
+</html>

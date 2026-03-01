@@ -1,0 +1,34 @@
+title: "Order of the Ætherwright"
+description: "A symbolic operating system for creative practice. Glyphs for domain classification, a Codex as living source of truth, daily ritual for grounding principle in habit."
+url: "https://aetherwright.com"
+baseurl: ""
+author: "Peter Salvato"
+
+collections:
+  doctrine:
+    output: true
+    permalink: /doctrine/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "doctrine"
+    values:
+      layout: "doctrine"
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - license.md
+  - CITATION.cff
+  - ip_declaration.md
+  - changelog.md
+  - authors.md
+  - metadata.yaml
+  - doctrine/
+  - node_modules/
+  - vendor/

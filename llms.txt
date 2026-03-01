@@ -14,7 +14,7 @@ The glyph system governs Peter Salvato's entire portfolio. The framework now hol
 
 Peter Salvato — Systems architect.
 Website: https://petersalvato.com
-Full case study: https://petersalvato.com/protocols/order-of-the-aetherwright/
+Full case study: https://petersalvato.com/governance/order-of-the-aetherwright/
 Source code: https://github.com/PeterSalvato/order-of-the-aetherwright
 
 ## Contact

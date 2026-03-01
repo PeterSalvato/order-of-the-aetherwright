@@ -1,0 +1,338 @@
+---
+---
+
+// Photocopied occult zine — 80s xerox aesthetic
+// High contrast, monospace-heavy, cheap paper texture, ink bleed
+
+$bg: #e8e4d8;
+$text: #111;
+$text-muted: #333;
+$text-faint: #666;
+$link: #111;
+$link-hover: #000;
+$code-bg: #ddd8ca;
+$border: #999;
+$rule: #111;
+
+$font-body: 'Space Mono', 'Courier New', monospace;
+$font-heading: 'Space Mono', 'Courier New', monospace;
+
+$max-width: 720px;
+$nav-width: 200px;
+$content-max: 640px;
+
+// Reset
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: $font-body;
+  background: $bg;
+  color: $text;
+  line-height: 1.7;
+  font-size: 14px;
+  // Subtle paper grain
+  background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1' height='1' x='0' y='0' fill='%23000' opacity='0.02'/%3E%3Crect width='1' height='1' x='2' y='2' fill='%23000' opacity='0.015'/%3E%3C/svg%3E");
+}
+
+a {
+  color: $link;
+  text-decoration: underline;
+  &:hover { text-decoration: none; }
+}
+
+// Site wrapper — single column, zine-like
+.site-wrapper {
+  max-width: $max-width;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+// Navigation — horizontal strip, like a zine TOC
+.site-nav {
+  padding: 1.5rem 2rem;
+  border-bottom: 3px solid $rule;
+}
+
+.nav-home {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: $text;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  &:hover { text-decoration: none; }
+}
+
+.nav-sigil {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(100%) contrast(200%);
+}
+
+.nav-doctrine {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+
+  li {
+    a {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $text-muted;
+      text-decoration: none;
+      border: 1px solid transparent;
+      &:hover {
+        border-color: $rule;
+      }
+    }
+
+    &.active a {
+      border: 1px solid $rule;
+      font-weight: 700;
+      color: $text;
+    }
+  }
+}
+
+.nav-github {
+  display: none; // Stays in footer
+}
+
+// Main content
+.site-content {
+  padding: 2rem;
+}
+
+// Homepage
+.home-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $border;
+
+  h1 {
+    font-family: $font-heading;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  .tagline {
+    font-size: 0.7rem;
+    color: $text-muted;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+}
+
+.home-sigil {
+  max-width: 100px;
+  margin: 1.5rem 0;
+  filter: grayscale(100%) contrast(200%);
+  mix-blend-mode: multiply;
+}
+
+.home-content {
+  p {
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    max-width: 52ch;
+  }
+
+  .home-links {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid $border;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    a {
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+
+// Doctrine pages
+.doctrine-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid $rule;
+
+  h1 {
+    font-family: $font-heading;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .doctrine-subtitle {
+    font-size: 0.7rem;
+    color: $text-muted;
+    margin-top: 0.25rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+.doctrine-content {
+  max-width: 56ch;
+
+  h1 {
+    font-family: $font-heading;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 2.5rem 0 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid $border;
+  }
+
+  h2 {
+    font-family: $font-heading;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 2rem 0 0.5rem;
+  }
+
+  h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  p { margin-bottom: 1rem; font-size: 0.85rem; }
+  ul, ol { margin: 0 0 1rem 1.5rem; font-size: 0.85rem; }
+  li { margin-bottom: 0.3rem; }
+
+  strong {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  em {
+    font-style: normal;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  code {
+    font-family: $font-body;
+    font-size: 0.8rem;
+    background: $code-bg;
+    padding: 0.1em 0.35em;
+    border: 1px solid $border;
+  }
+
+  pre {
+    background: $code-bg;
+    padding: 1rem;
+    border: 1px solid $border;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+
+    code {
+      background: none;
+      padding: 0;
+      border: none;
+      font-size: 0.75rem;
+    }
+  }
+
+  blockquote {
+    border-left: 3px solid $rule;
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+
+    th, td {
+      text-align: left;
+      padding: 0.4rem 0.6rem;
+      border: 1px solid $border;
+    }
+
+    th {
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: $code-bg;
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid $border;
+    margin: 2rem 0;
+  }
+}
+
+// Doctrine navigation footer
+.doctrine-nav-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 3px solid $rule;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  .doctrine-next { margin-left: auto; }
+}
+
+// Site footer
+.site-footer {
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  border-top: 3px solid $rule;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $text-muted;
+
+  a { color: $text-muted; &:hover { color: $text; } }
+  p { margin-bottom: 0.25rem; }
+}
+
+// Mobile
+@media (max-width: 600px) {
+  .site-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .site-nav {
+    padding: 1rem;
+  }
+
+  .nav-doctrine {
+    li a {
+      font-size: 0.65rem;
+      padding: 0.15rem 0.4rem;
+    }
+  }
+
+  .site-footer {
+    padding: 1rem;
+  }
+}
