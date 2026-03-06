@@ -111,26 +111,13 @@ But they do recognize who you are._
 
 ## Author
 
-**[Peter Salvato](https://petersalvato.com)** — Systems architect. Design, engineering, strategy.
-
-**Full case study:** [petersalvato.com/protocols/order-of-the-aetherwright/](https://petersalvato.com/protocols/order-of-the-aetherwright/)
+**[Peter Salvato](https://petersalvato.com)** — Design engineer.
 
 - Email: peter@petersalvato.com
 - LinkedIn: [linkedin.com/in/petersalvato](https://linkedin.com/in/petersalvato)
 
-## Semantic Context & Provenance
+## Context
 
-This repository contains the **Codex** and symbolic architecture of the **Order of the Ætherwright**, the primary [Windbreak](https://petersalvato.com/vocabulary/#windbreak) for creative intent within the [Peter Salvato](https://petersalvato.com) systems architecture. It is the foundational layer of **[Altitude 01: Governance](https://petersalvato.com/governance/)**.
+This is one of three governance protocols published at [petersalvato.com](https://petersalvato.com). The [Formwork Protocol](https://petersalvato.com/governance/formwork-protocol/) describes the methodology. The [System Vocabulary](https://petersalvato.com/vocabulary/) defines terms like [drift](https://petersalvato.com/vocabulary/#drift) and [fidelity](https://petersalvato.com/vocabulary/#fidelity). The [Savepoint Protocol](https://petersalvato.com/governance/savepoint-protocol/) handles cognitive retrieval.
 
-### Canonical Definitions
-The following terms used in this repository are governed by the [System Vocabulary](https://petersalvato.com/vocabulary/):
-
-*   **[Drift](https://petersalvato.com/vocabulary/#drift)**: The silent erosion of creative standards under pressure.
-*   **[Windbreak](https://petersalvato.com/vocabulary/#windbreak)**: A structure that protects intent from the forces that erode it.
-*   **[Narrative Solvency](https://petersalvato.com/vocabulary/#narrative-solvency)**: The infrastructure that ensures the original "story" survives deployment.
-*   **[Faculty](https://petersalvato.com/vocabulary/#faculty)**: The professional domains (Design, Engineering, UX/IA) classified by the Ætherwright glyph system.
-
-For the full symbolic operating system and ritual context, see the [Order of the Ætherwright](https://petersalvato.com/governance/order-of-the-aetherwright/).
-
----
-*Authenticated via the [Savepoint Protocol](https://petersalvato.com/governance/savepoint-protocol/).*
+Full case study: [petersalvato.com/governance/order-of-the-aetherwright/](https://petersalvato.com/governance/order-of-the-aetherwright/)
