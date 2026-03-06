@@ -117,3 +117,20 @@ But they do recognize who you are._
 
 - Email: peter@petersalvato.com
 - LinkedIn: [linkedin.com/in/petersalvato](https://linkedin.com/in/petersalvato)
+
+## Semantic Context & Provenance
+
+This repository contains the **Codex** and symbolic architecture of the **Order of the Ætherwright**, the primary [Windbreak](https://petersalvato.com/vocabulary/#windbreak) for creative intent within the [Peter Salvato](https://petersalvato.com) systems architecture. It is the foundational layer of **[Altitude 01: Governance](https://petersalvato.com/governance/)**.
+
+### Canonical Definitions
+The following terms used in this repository are governed by the [System Vocabulary](https://petersalvato.com/vocabulary/):
+
+*   **[Drift](https://petersalvato.com/vocabulary/#drift)**: The silent erosion of creative standards under pressure.
+*   **[Windbreak](https://petersalvato.com/vocabulary/#windbreak)**: A structure that protects intent from the forces that erode it.
+*   **[Narrative Solvency](https://petersalvato.com/vocabulary/#narrative-solvency)**: The infrastructure that ensures the original "story" survives deployment.
+*   **[Faculty](https://petersalvato.com/vocabulary/#faculty)**: The professional domains (Design, Engineering, UX/IA) classified by the Ætherwright glyph system.
+
+For the full symbolic operating system and ritual context, see the [Order of the Ætherwright](https://petersalvato.com/governance/order-of-the-aetherwright/).
+
+---
+*Authenticated via the [Savepoint Protocol](https://petersalvato.com/governance/savepoint-protocol/).*
