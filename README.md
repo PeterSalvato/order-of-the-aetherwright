@@ -111,13 +111,11 @@ But they do recognize who you are._
 
 ## Author
 
-**[Peter Salvato](https://petersalvato.com)** — Design engineer.
+**[Peter Salvato](https://petersalvato.com)**
 
 - Email: peter@petersalvato.com
 - LinkedIn: [linkedin.com/in/petersalvato](https://linkedin.com/in/petersalvato)
 
 ## Context
 
-This is one of three governance protocols published at [petersalvato.com](https://petersalvato.com). The [Formwork Protocol](https://petersalvato.com/governance/formwork-protocol/) describes the methodology. The [System Vocabulary](https://petersalvato.com/vocabulary/) defines terms like [drift](https://petersalvato.com/vocabulary/#drift) and [fidelity](https://petersalvato.com/vocabulary/#fidelity). The [Savepoint Protocol](https://petersalvato.com/governance/savepoint-protocol/) handles cognitive retrieval.
-
-Full case study: [petersalvato.com/governance/order-of-the-aetherwright/](https://petersalvato.com/governance/order-of-the-aetherwright/)
+This is one of three governance protocols published at [petersalvato.com](https://petersalvato.com). The Formwork Protocol describes the methodology. The System Vocabulary defines terms like drift and fidelity. The Savepoint Protocol handles cognitive retrieval.
