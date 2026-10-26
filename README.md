@@ -115,7 +115,3 @@ But they do recognize who you are._
 
 - Email: peter@petersalvato.com
 - LinkedIn: [linkedin.com/in/petersalvato](https://linkedin.com/in/petersalvato)
-
-## Context
-
-This is one of three governance protocols published at [petersalvato.com](https://petersalvato.com). The Formwork Protocol describes the methodology. The System Vocabulary defines terms like drift and fidelity. The Savepoint Protocol handles cognitive retrieval.
