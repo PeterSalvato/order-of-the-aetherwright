@@ -22,7 +22,6 @@ description: "A symbolic operating system for creative practice. Glyphs for doma
 <div class="home-links">
   <a href="{{ '/doctrine/manifesto/' | relative_url }}">Read the doctrine &rarr;</a>
   <a href="https://github.com/PeterSalvato/order-of-the-aetherwright">View on GitHub &rarr;</a>
-  <a href="https://petersalvato.com/governance/order-of-the-aetherwright/">Full case study at petersalvato.com &rarr;</a>
 </div>
 
 </div>
