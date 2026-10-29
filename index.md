@@ -5,11 +5,11 @@ description: "A symbolic operating system for creative practice. Glyphs for doma
 ---
 
 <div class="home-header">
-  <h1>Order of the Ætherwright</h1>
+  <h1 class="xerox">Order of the Ætherwright</h1>
   <p class="tagline">Symbolic Structure for Creative Work</p>
 </div>
 
-<img src="{{ '/assets/sigils/sigil.full.lowRes.png' | relative_url }}" alt="Ætherwright Sigil" class="home-sigil">
+<img src="{{ '/assets/sigils/sigil.full.lowRes.png' | relative_url }}" alt="Ætherwright Sigil" class="home-sigil xerox">
 
 <div class="home-content">
 
