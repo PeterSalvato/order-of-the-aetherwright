@@ -5,11 +5,10 @@ description: "A symbolic operating system for creative practice. Glyphs for doma
 ---
 
 <div class="home-header">
-  <h1>Order of the Ætherwright</h1>
+  <h1 class="visually-hidden">Order of the Ætherwright</h1>
+  <span class="toner"><img src="{{ '/assets/sigils/sigil.full.cropped.png' | relative_url }}" alt="The Order of the Ætherwright, MMXXV" class="home-sigil xerox"></span>
   <p class="tagline">Symbolic Structure for Creative Work</p>
 </div>
-
-<img src="{{ '/assets/sigils/sigil.full.lowRes.png' | relative_url }}" alt="Ætherwright Sigil" class="home-sigil">
 
 <div class="home-content">
 
@@ -22,7 +21,6 @@ description: "A symbolic operating system for creative practice. Glyphs for doma
 <div class="home-links">
   <a href="{{ '/doctrine/manifesto/' | relative_url }}">Read the doctrine &rarr;</a>
   <a href="https://github.com/PeterSalvato/order-of-the-aetherwright">View on GitHub &rarr;</a>
-  <a href="https://petersalvato.com/governance/order-of-the-aetherwright/">Full case study at petersalvato.com &rarr;</a>
 </div>
 
 </div>
