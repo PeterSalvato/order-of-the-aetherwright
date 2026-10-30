@@ -1,22 +1,22 @@
 ---
 layout: default
 title: "Order of the Ætherwright"
-description: "A symbolic operating system for creative practice. Glyphs for domain classification, a Codex as living source of truth, daily ritual for grounding principle in habit."
+description: "A structure for creative practice: eight glyphs for sorting work by domain, a codex for recording decisions, and a short morning ritual."
 ---
 
 <div class="home-header">
   <h1 class="visually-hidden">Order of the Ætherwright</h1>
   <span class="toner"><img src="{{ '/assets/sigils/sigil.full.cropped.png' | relative_url }}" alt="The Order of the Ætherwright, MMXXV" class="home-sigil xerox"></span>
-  <p class="tagline">Symbolic Structure for Creative Work</p>
+  <p class="tagline">Doctrine in ten parts</p>
 </div>
 
 <div class="home-content">
 
-<p>Thirty years of consistent method across design, engineering, and strategy — existing as instinct without explicit structure. Creative method drifts incrementally. Reasonable decisions accumulate into something nobody chose.</p>
+<p>The Order of the Ætherwright is a structure for creative practice.</p>
 
-<p>The Order is a symbolic operating system for creative practice. Glyphs for domain classification. A Morning Alignment ritual. A Codex as institutional source of truth. The philosophy made structural.</p>
+<p>It has three parts. Eight glyphs sort work by domain: design, writing, code, craft and the rest. A codex records what you've decided and why, so the reasoning outlasts the moment. A short morning ritual checks the day's work against both.</p>
 
-<p>Not a persona, not a brand — a governance framework for creative identity that holds under scale.</p>
+<p>I built it after thirty years of working by instinct. The method was consistent, but it lived only in my head, and it drifted one reasonable decision at a time.</p>
 
 <div class="home-links">
   <a href="{{ '/doctrine/manifesto/' | relative_url }}">Read the doctrine &rarr;</a>
