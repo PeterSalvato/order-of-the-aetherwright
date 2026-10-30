@@ -2,11 +2,11 @@
 layout: doctrine
 title: "Ætherwright Language Primer"
 nav_title: "Language"
-description: "The language of the Order. Terminology, naming conventions, controlled vocabulary."
+description: "The Order's core vocabulary: the handful of words the doctrine depends on."
 order: 8
 ---
 
-This document catalogs the internal lexicon used by the Order of the Ætherwright.
+These are the core terms of the Order of the Ætherwright.
 
 ## Core Terms
 
@@ -15,6 +15,6 @@ This document catalogs the internal lexicon used by the Order of the Ætherwrigh
 - **Reel** — A larger cycle or body of work, composed of Frames.
 - **Sigil** — The core symbolic mark encoding the system's logic and identity.
 - **Glyph** — A semantic icon representing conceptual domains or practitioner roles.
-- **Echo** — A saved resonance or reflection—a signal captured from inner refinement.
+- **Echo** — A saved reflection: something you noticed and want to keep.
 
-_This document will expand as the system evolves._
+_The list grows with the system._

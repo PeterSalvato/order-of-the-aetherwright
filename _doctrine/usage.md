@@ -2,11 +2,11 @@
 layout: doctrine
 title: "Usage Guide: Living Within the Order"
 nav_title: "Usage"
-description: "Practical guide to adopting the Order's framework. How to apply glyphs, codex, and ritual in practice."
+description: "How to practice within the Order: what you can use today and what is coming."
 order: 10
 ---
 
-This document outlines how a practitioner engages with the Order of the Ætherwright — what's available now and what's coming.
+How to practice within the Order of the Ætherwright: what you can use today, and what is coming.
 
 ---
 
@@ -14,19 +14,19 @@ This document outlines how a practitioner engages with the Order of the Ætherwr
 
 The doctrine is the system. Start here:
 
-1. **Read the [Manifesto](./manifesto.md)** — understand what the Order is and isn't
-2. **Read [Philosophy](./philosophy.md)** — foundational beliefs and intellectual lineage
-3. **Study the [Glyphs](./glyphs.md)** — the 8 fixed domains of creative activity
-4. **Learn the [Codex](./codex.md)** — symbolic execution strings for encoding process
-5. **Understand the [Sigil](./sigil.md)** — the visual mark and its construction logic
+1. **Read the [Manifesto]({{ '/doctrine/manifesto/' | relative_url }})**: what the Order is
+2. **Read the [Philosophy]({{ '/doctrine/philosophy/' | relative_url }})**: its premise and lineage
+3. **Study the [Glyphs]({{ '/doctrine/glyphs/' | relative_url }})**: the eight domains of creative work
+4. **Learn the [Codex]({{ '/doctrine/codex/' | relative_url }})**: the strings that record process
+5. **Understand the [Sigil]({{ '/doctrine/sigil/' | relative_url }})**: the mark and how it is built
 
-The doctrine is complete. You can begin practicing with it immediately — logging your creative process using Codex strings, marking your work with glyphs, tracking where your attention goes.
+The doctrine is complete, and you can start now: log your process in Codex strings, mark your work with glyphs, and track where your attention goes.
 
 ---
 
 ## Your Practice
 
-You don't need software to practice. The glyph and Codex systems work on paper, in margins, in commit messages, in notebook headers.
+The glyphs and the Codex work anywhere you can write: on paper, in margins, in commit messages, in notebook headers.
 
 Use them to:
 - Label notebooks, files, folders, environments
@@ -34,20 +34,19 @@ Use them to:
 - Mark where specific domains of attention were active
 - Encode the shape of a project's evolution
 
-Every object has intent. Every symbol has meaning.
 
 ---
 
 ## Your Bench (Planned)
 
-The Fourfold Bench — four themed tools arranged as a symbolic workspace:
+The Fourfold Bench is four themed tools arranged as one workspace:
 
 - **Bench** (VSCode) — space of construction
 - **Chamber** (Terminal) — space of invocation
 - **Codex** (Obsidian) — space of reflection
 - **Relay** (Browser) — space of connection
 
-Themed overlays for each tool are planned but not yet built. When they arrive, they will transform the workspace from a collection of tools into an inhabited system.
+Themed overlays for each tool are planned but not yet built. When they arrive, the four tools will work as one inhabited space.
 
 ---
 
@@ -61,18 +60,17 @@ Symbolic shell aliases are planned:
 - `sigil` → preview or print a glyph
 - `benchplate` → initialize a new project space
 
-These aliases will create a language of Work — ritualizing the command line.
+They will make the command line part of the ritual.
 
 ---
 
 ## Your Path
 
-This is a sovereign system.
-You are not bound by steps — you assemble your own ritual stack.
+You set the path and assemble your own ritual stack:
 
 - Use the doctrine alone, with no tools at all
 - Track your process with Codex strings in a paper notebook
 - Wait for the overlays and aliases to arrive, then install the full Bench
 - Or simply observe, reflect, and study
 
-The Order is an interface, not an imposition.
+Take what helps.

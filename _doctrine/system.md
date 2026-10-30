@@ -2,11 +2,11 @@
 layout: doctrine
 title: "System Architecture: The Ætherwright Interface"
 nav_title: "System"
-description: "The Fourfold Bench. Operational structure of the Order: Stewards, Practitioners, ritual, governance."
+description: "The Fourfold Bench: the four tools the Order works through, what is planned, and what exists now."
 order: 7
 ---
 
-The Ætherwright System is a symbolic operating system — an immersive, intentional interface for sovereign cognition. It is not a productivity tool or design system. It is a philosophical framework instantiated through ritualized practice, symbolic logic, and spatial interface design.
+The Ætherwright System is the Order put into a working environment: everyday tools, themed and arranged so that practice happens in a deliberate space.
 
 ---
 
@@ -23,15 +23,13 @@ The Order operates through a four-part immersive workspace configuration:
 - **Relay** — Firefox (or browser)
   The channel of connection. Primarily used for LLMs, research, or system mirrors.
 
-These tools are themed and spatially arranged to create a working environment that feels like inhabiting a system — not just using one.
+Each tool is themed and arranged so the workspace feels inhabited.
 
 ---
 
 ## The Drop Kit (Planned)
 
-The Drop Kit is the symbolic starter kit: an invocation point for entering the system. It will contain overlays, themes, scripts, printables, and optional 3D assets for shaping a personalized interface aligned to the Order.
-
-Nothing is required. Everything is intentional.
+The Drop Kit is the starter kit for entering the system. It will hold overlays, themes, scripts, printables, and optional 3D assets for building your own interface around the Order.
 
 **Status:** Not yet built. The doctrine and symbolic system are complete; the Drop Kit will follow when the tools are ready.
 
@@ -39,7 +37,7 @@ Nothing is required. Everything is intentional.
 
 ## Ritual and Invocation (Planned)
 
-The install process is itself symbolic — a bootstrap ritual. A future `aether-init.sh` script will assemble the Bench.
+Installing is itself a ritual. A future `aether-init.sh` script will assemble the Bench.
 
 Planned symbolic shell aliases:
 
@@ -51,7 +49,7 @@ Planned symbolic shell aliases:
 | `sigil` | Preview or print a glyph |
 | `benchplate` | Initialize a new project space |
 
-These aliases will create a language of Work — remapping the command line as ritual, not just function.
+Together, the aliases turn the command line into a language of Work.
 
 **Status:** Not yet implemented.
 
@@ -65,7 +63,7 @@ In addition to digital overlays, the Order will provide:
 - Glyph stamp files for 3D printing
 - Labelable debossing marks
 
-These bridge the symbolic system into the physical world — ritual through contact.
+They carry the system off the screen and into your hands.
 
 **Status:** Not yet produced. Asset templates are planned.
 
@@ -79,4 +77,4 @@ These bridge the symbolic system into the physical world — ritual through cont
 - **Sigil:** Visual mark with full construction and positional logic
 - **IP protection:** License, declaration, authorship timestamped
 
-The doctrine defines the system. The tools will instantiate it.
+The doctrine is complete. The tools come next.

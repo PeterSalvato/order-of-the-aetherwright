@@ -2,11 +2,11 @@
 layout: doctrine
 title: "Ætherwright Codex Syntax v1.1"
 nav_title: "Codex"
-description: "The living source of truth. How the Codex encodes domain interaction across project phases."
+description: "Codex syntax: how one line of glyphs records the phases of a creative project."
 order: 4
 ---
 
-A symbolic execution string used to encode creative process phases using domain glyphs. Codex lines are rendered in plaintext using Unicode and are compatible with terminal, markdown, print, and archival contexts.
+A Codex string is one line of glyphs that records the phases of a creative project. It is plain Unicode text, so it works in a terminal, in markdown, in print, and in an archive.
 
 ---
 
@@ -26,7 +26,7 @@ A symbolic execution string used to encode creative process phases using domain 
 - `|` `||` `|||` → Phase markers (Phase 1, Phase 2, Phase 3, etc.)
 - `●` → Input / research / orientation phase (not a domain)
 - `∅` → Null phase (no domains active)
-- Domain glyphs → Represent active domains (see `glyphs.md`)
+- Domain glyphs → Active domains (see [Glyphs]({{ '/doctrine/glyphs/' | relative_url }}))
 - `⟩` → Completed but not released
 - `⟩⟩` → Completed and released
 - `~` → Ongoing / perpetual state
@@ -42,21 +42,17 @@ A symbolic execution string used to encode creative process phases using domain 
 - `●` may appear alone or before domain glyphs.
 - `∅` is valid within a phase but not at the end.
 - All symbols must be Unicode-safe and render in monospaced environments.
-- Spaces are discouraged—use compressed format for maximum clarity.
+- Leave out spaces. The compressed form is the canonical one.
 
 ---
 
 ## Domain Reuse and Relational Proof
 
-Domain glyphs may repeat across phases.
+Domain glyphs may repeat across phases, and that is deliberate.
 
-This is intentional.
+A Codex string is a **relational proof**: it records how different faculties worked together *across time*. When a domain appears more than once, the string shows its role in the process changing.
 
-The Codex string is not a checklist of domains used—it is a **relational proof** of how different faculties interacted *across time*. When a domain appears multiple times, it reflects its **evolution** and **changing role** in the creative process.
-
-A glyph like `▶` might first appear in a sketching context, then return in a later phase as final rendering—symbolically representing **refinement**, **transformation**, or **domain continuity**.
-
-Each repetition matters.
+`▶` might first appear as sketching, then return in a later phase as final rendering. The repeat records **refinement**.
 
 ---
 
@@ -93,4 +89,4 @@ Codex strings are intended for:
 - Symbolic signature of creative process
 - Metadata blocks, commit messages, or symbolic versioning
 
-They are not decorative—they are **ritual execution records**.
+Each one is a **ritual execution record**: proof of work actually done.
