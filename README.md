@@ -43,7 +43,7 @@ The doctrine is the heart of the Order — a set of authored documents that defi
 
 The Sigil of the Order is a central visual mark rooted in dynamic symmetry. Eight domain glyphs arranged in a radial wheel around a central point of ritual presence. It is not decorative. It is a signal: this system is authored, intentional, and lived.
 
-[View the Sigil →](./assets/sigils/sigil.full.lowRes.png)
+[View the Sigil →](./assets/sigils/sigil.full.cropped.png)
 
 ---
 

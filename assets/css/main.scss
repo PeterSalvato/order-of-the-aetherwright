@@ -5,7 +5,7 @@
 // Two values only: ink and paper. A copier has no grays, so hierarchy
 // comes from size, weight, case, rules and reversed (white-on-black) bars.
 
-$paper: #f3f2ee;
+$paper: #ffffff; // bright copy paper
 $ink: #0b0b0b;
 
 $font-body: 'Space Mono', 'Courier New', monospace;
@@ -17,10 +17,12 @@ $content-max: 62ch;
 // Texture hooks. Peter supplies the scans; until then these stay empty.
 //   --paper-texture: page background scan, e.g. url(/assets/texture/paper.png)
 //   --ink-mask:      toner dropout scan, masked onto .xerox elements
+//   --type-texture:  toner scan used as the fill of .xerox type
 :root {
   --paper-texture: none;
   --ink-mask: none;
   --ink-mask-size: 600px;
+  --type-texture: url('../texture/toner.webp');
 }
 
 .xerox {
@@ -29,6 +31,27 @@ $content-max: 62ch;
   -webkit-mask-size: var(--ink-mask-size);
   mask-size: var(--ink-mask-size);
 }
+
+// Toner: the scan is screened over the element, so black areas pick up the
+// streaks and dropout while white stays clean paper. Used on titles, bars and images.
+@mixin toner {
+  position: relative;
+  isolation: isolate;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--type-texture) center var(--tex-y, 50%) / cover;
+    filter: contrast(1.8) brightness(0.6);
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+}
+
+// Elements without their own fill need paper behind them, since the
+// isolated blend can't see the page.
+h1.xerox, .toner { @include toner; background-color: $paper; }
+.toner { display: block; line-height: 0; }
 
 // Reset
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -50,6 +73,7 @@ a {
 
 // Reversed bar: white type knocked out of a black block
 @mixin reversed {
+  @include toner;
   background: $ink;
   color: $paper;
   padding: 0.35rem 0.7rem;
@@ -126,8 +150,22 @@ a {
 }
 
 // Homepage
+// On the landing the sigil lockup carries the name, so the nav drops its
+// brand block and the title is kept for screen readers only.
+.site-nav--home { border-top: 4px solid $ink; padding-top: 0.5rem; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .home-header {
   margin-bottom: 2rem;
+  text-align: center;
 
   h1 {
     font-family: $font-heading;
@@ -152,7 +190,7 @@ a {
 .home-sigil {
   display: block;
   width: min(320px, 70%);
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 1.5rem;
   filter: grayscale(100%) contrast(250%);
   mix-blend-mode: multiply;
 }
@@ -300,6 +338,7 @@ a {
     }
 
     th {
+      @include toner;
       background: $ink;
       color: $paper;
       font-weight: 700;

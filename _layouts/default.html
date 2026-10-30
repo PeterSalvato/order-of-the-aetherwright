@@ -5,11 +5,14 @@
 </head>
 <body>
   <div class="site-wrapper">
-    <nav class="site-nav">
+    {% assign is_home = false %}{% if page.url == '/' %}{% assign is_home = true %}{% endif %}
+    <nav class="site-nav{% if is_home %} site-nav--home{% endif %}">
+      {% unless is_home %}
       <a href="{{ '/' | relative_url }}" class="nav-home">
-        <img src="{{ '/assets/sigils/sigil.full.lowRes.png' | relative_url }}" alt="Sigil" class="nav-sigil">
+        <span class="toner nav-sigil-wrap"><img src="{{ '/assets/sigils/sigil.full.cropped.png' | relative_url }}" alt="Sigil" class="nav-sigil"></span>
         <span>Order of the Ætherwright</span>
       </a>
+      {% endunless %}
       <ul class="nav-doctrine">
         {% assign ordered_doctrine = site.doctrine | sort: "order" %}
         {% for doc in ordered_doctrine %}
@@ -24,5 +27,13 @@
     </main>
     {% include footer.html %}
   </div>
+  <script>
+    // Each toner element takes a different slice of the scan, so no two copies match.
+    document.querySelectorAll('body *').forEach(function (el) {
+      if (getComputedStyle(el, '::after').mixBlendMode === 'screen') {
+        el.style.setProperty('--tex-y', Math.round(Math.random() * 100) + '%');
+      }
+    });
+  </script>
 </body>
 </html>
