@@ -2,11 +2,11 @@
 layout: doctrine
 title: "Symbolic Terminology Glossary"
 nav_title: "Terminology"
-description: "Formal glossary of Order terms. Definitions for glyphs, codex, drift, altitude, and structural concepts."
+description: "Glossary of the Order's terms: interface metaphors, planned commands, and core vocabulary."
 order: 9
 ---
 
-This file defines key symbolic terms used throughout the Ætherwright System.
+This glossary defines the terms used throughout the Ætherwright System.
 
 ---
 
@@ -44,9 +44,9 @@ These shell aliases are designed but not yet implemented:
 | **Reel** | A larger cycle or body of work, composed of Frames |
 | **Sigil** | The core symbolic mark encoding the system's logic and identity |
 | **Glyph** | A semantic icon representing conceptual domains or practitioner roles |
-| **Echo** | A saved resonance or reflection — a signal captured from inner refinement |
+| **Echo** | A saved reflection: something you noticed and want to keep |
 | **Drop Kit** | The symbolic starter kit for entering the system (planned) |
 
 ---
 
-This glossary will expand as the symbolic UX language grows.
+The glossary grows with the system.

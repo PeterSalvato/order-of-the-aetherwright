@@ -2,7 +2,7 @@
 layout: doctrine
 title: "The Ætherwright Sigil"
 nav_title: "Sigil"
-description: "The Ætherwright sigil. Visual identity, construction, meaning."
+description: "The Ætherwright sigil: what it marks, how it is built, and where each glyph sits."
 order: 6
 ---
 
@@ -10,9 +10,9 @@ order: 6
 
 ## I. Purpose of the Sigil
 
-The Ætherwright Sigil is a symbolic lockup that represents the complete system in visual form. It serves as a ceremonial seal, used for marking artifacts, tools, documents, and identities aligned with the Order.
+The Ætherwright Sigil is the whole system drawn as one mark. It works as a ceremonial seal for artifacts, tools, documents, and identities aligned with the Order.
 
-It is not Codex syntax. It is not used for classification. It is used to visually affirm philosophical alignment, authorship, or presence.
+The sigil classifies nothing; that is the Codex's job. It marks alignment, authorship, or presence.
 
 ---
 
@@ -30,7 +30,7 @@ All elements are drawn from the closed symbolic system.
 
 ## III. Positional Logic
 
-Each glyph occupies a directional position. These are not arbitrary—they reflect symbolic relationships:
+Each glyph holds a fixed position, and each position carries meaning:
 
 | Position      | Glyph | Domain                  | Meaning                             |
 |---------------|-------|--------------------------|-------------------------------------|
@@ -41,7 +41,7 @@ Each glyph occupies a directional position. These are not arbitrary—they refle
 | Top Left      | ◆     | Craft / Physical Work    | Making, fabrication                 |
 | Top Right     | ■     | Design / Grid            | Spatial logic, typographic order    |
 | Bottom Left   | ⬟     | Photography / Observation| Framing, stillness, witness         |
-| Bottom Right  | ⬠     | Code / Engineering       | Architecture, logical systems       |
+| Bottom Right  | ⬣     | Code / Engineering       | Architecture, logical systems       |
 
 **Center**: `●` represents ritual presence and embodied intention.
 
@@ -71,24 +71,23 @@ The sigil is used in symbolic or ceremonial contexts:
 - Header marks in sacred documents
 - Personal artifacts or tools of aligned practitioners
 
-It is never required. It is always deliberate.
+The sigil is optional. Use it deliberately.
 
 ---
 
 ## VI. Sigil vs. Codex
 
-The sigil does not replace the Codex. It serves a different function.
+The sigil and the Codex do different jobs.
 
 | Purpose                  | Codex Syntax | Sigil Symbol |
 |--------------------------|--------------|--------------|
-| Tracking creative phases | ✅            | ❌            |
-| Classifying domain use   | ✅            | ❌            |
-| Ritual / alignment mark  | ❌            | ✅            |
-| Public identity lockup   | ❌            | ✅            |
-| Metadata or naming use   | ✅            | ❌            |
-| Visual emblem            | ❌            | ✅            |
+| Tracking creative phases | Yes          | No           |
+| Classifying domain use   | Yes          | No           |
+| Ritual / alignment mark  | No           | Yes          |
+| Public identity lockup   | No           | Yes          |
+| Metadata or naming use   | Yes          | No           |
+| Visual emblem            | No           | Yes          |
 
 ---
 
-The sigil is not decorative. It is not branding.
-It is a **signal**: this system is authored, intentional, and lived.
+The sigil is a **signal**: this system is authored, intentional, and lived.

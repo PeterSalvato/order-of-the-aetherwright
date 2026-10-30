@@ -2,11 +2,11 @@
 layout: doctrine
 title: "Ætherwright Glyphs"
 nav_title: "Glyphs"
-description: "Eight Unicode glyphs for domain classification. The closed set that governs all artifacts."
+description: "The eight glyphs that name the domains of creative work, plus the one that marks research. A closed set."
 order: 3
 ---
 
-The Order of the Ætherwright uses a fixed set of symbolic glyphs to represent core domains of creative activity. These glyphs are used across systems including sigil construction, Codex syntax, and overlays.
+The Order of the Ætherwright uses a fixed set of glyphs for the core domains of creative work. They appear in the sigil, in Codex strings, and in overlays.
 
 ---
 
@@ -23,7 +23,7 @@ The Order of the Ætherwright uses a fixed set of symbolic glyphs to represent c
 | `⬟` | Photography / Observation | Framing, capturing, external study |
 | `⬣` | Code / Engineering / Logic | Technical architecture, software, systems implementation |
 
-These glyphs are visually balanced, monoline, and intentionally limited. No new shapes will be added.
+The glyphs are monoline and visually balanced. The set is closed: no new shapes will be added.
 
 ---
 
@@ -33,14 +33,14 @@ These glyphs are visually balanced, monoline, and intentionally limited. No new 
 |-------|------|-------------|
 | `●` | Input / Research / Study | Reading, gathering, exploration, orientation before domain selection |
 
-`●` is not a domain. It represents a **pre-creative state**, often appearing as a phase in Codex syntax.
+`●` marks a **pre-creative state** rather than a domain. It often appears as its own phase in a Codex string.
 
 ---
 
 ## Notes
 
-- Glyphs are used in linear Codex strings to symbolically document creative phases.
-- These symbols also appear in sigils, overlays, and marginalia.
-- All glyphs are rendered as **filled Unicode characters** to preserve terminal compatibility.
+- In a Codex string, glyphs record the phases of a project in order.
+- They also appear in the sigil, in overlays, and in marginalia.
+- Every glyph is a **filled Unicode character**, so it renders in a terminal.
 
-See `codex.md` for execution syntax and usage examples.
+See the [Codex]({{ '/doctrine/codex/' | relative_url }}) for syntax and examples.

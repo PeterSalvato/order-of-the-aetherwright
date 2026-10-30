@@ -2,7 +2,7 @@
 layout: doctrine
 title: "The Codex as Relational Proof"
 nav_title: "Codex Theory"
-description: "Theoretical foundation for the Codex notation system. Transformation encoding, phase architecture."
+description: "How to read a Codex string: what its order, repeats, and inputs say about how a project was made."
 order: 5
 ---
 
@@ -10,31 +10,31 @@ order: 5
 
 ---
 
-The Codex is not simply a checklist of domains used in a project. It is a **symbolic trace of transformation**—a record of how faculties activated, reactivated, and interacted across the span of creative execution.
+A Codex string records more than which domains a project used. It is a **trace of transformation**: how each faculty switched on, came back, and worked with the others from start to finish.
 
 ---
 
 ## Domains as Vectors, Not Labels
 
-Each glyph in the Codex marks the **engagement** of a specific domain—`UX`, `Narrative`, `Illustration`, `Design`, etc. But the Codex also encodes:
+Each glyph marks the **engagement** of a domain, such as UX, Narrative, Illustration, or Design. The string also records:
 
 - **When** each domain became active
 - **In relation to which other domains**
 - **At which phase of process**
 
-In this way, the Codex is not just symbolic. It is a **compressed programmatic log** of a creative operation.
+That makes the Codex a **compressed log** of a creative operation.
 
 ---
 
 ## Repetition Reflects Refinement
 
-A domain may appear in multiple phases. This is not redundancy—it is **narrative structure**.
+A domain may appear in several phases. The repetition is **narrative structure**.
 
 Example:
 - `▶` (Illustration) may appear in Phase 1 for sketching
 - It appears again in Phase 3 for vector refinement
 
-This repetition creates symbolic contrast: it suggests that drawing was **revisited**, **refined**, or **contextually transformed**.
+The repeat shows that drawing was **revisited** and **refined**.
 
 ---
 
@@ -47,18 +47,18 @@ It often appears:
 - Preceding other domains
 - Or in a standalone phase, if the project was **pure intake**
 
-This reinforces the principle that **action follows awareness**.
+It reflects a principle of the Order: **action follows awareness**.
 
 ---
 
 ## The Codex as Creative Archaeology
 
-Each Codex string can be read backward or forward:
+A Codex string reads in both directions:
 
-- Forward: A **map** of how process unfolded
-- Backward: A **story** of how intent became form
+- Forward: a **map** of how the process unfolded
+- Backward: a **story** of how intent became form
 
-It becomes a tool not just for **describing** a project, but for **decoding** it later.
+Either way, it lets you decode a project long after it is finished.
 
 ---
 
@@ -70,4 +70,4 @@ Codex strings may be:
 - Or written in reflection at project closure
 - Used as ritual metadata, marginalia, footers, or print slugs
 
-The Codex is not simply *notation*—it is a **semantic record of transformation**.
+Read this way, the Codex is a **record of transformation**.
