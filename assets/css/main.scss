@@ -337,8 +337,10 @@ a {
       vertical-align: top;
     }
 
+    // One scan across the whole header row, not one per cell
+    thead tr { @include toner; }
+
     th {
-      @include toner;
       background: $ink;
       color: $paper;
       font-weight: 700;
