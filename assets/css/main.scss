@@ -22,7 +22,7 @@ $content-max: 62ch;
   --paper-texture: none;
   --ink-mask: none;
   --ink-mask-size: 600px;
-  --type-texture: url('../texture/toner.webp');
+  --type-texture: #{"url('../texture/toner.webp')"}; // interpolated for the old Sass on GitHub Pages
 }
 
 .xerox {
