@@ -1,27 +1,30 @@
 ---
 layout: default
 ---
+{% assign romans = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII" | split: "," %}
+{% assign ordered_doctrine = site.doctrine | sort: "order" %}
+{% assign last_index = ordered_doctrine.size | minus: 1 %}
+{% assign total = romans[last_index] %}
 <article class="doctrine-page">
   <header class="doctrine-header">
-    {% assign ordered_doctrine = site.doctrine | sort: "order" %}
-    {% for doc in ordered_doctrine %}{% if doc.url == page.url %}<p class="doctrine-number">Doctrine {{ forloop.index | prepend: '0' | slice: -2, 2 }} of {{ ordered_doctrine.size | prepend: '0' | slice: -2, 2 }}</p>{% endif %}{% endfor %}
-    <h1 class="xerox">{{ page.title }}</h1>
+    {% for doc in ordered_doctrine %}{% if doc.url == page.url %}<div class="kicker"><span>Doctrine &middot; Part {{ romans[forloop.index0] }} of {{ total }}</span><span>For circulation among members</span></div>{% endif %}{% endfor %}
+    <h1>{{ page.title }}</h1>
     {% if page.subtitle %}<p class="doctrine-subtitle">{{ page.subtitle }}</p>{% endif %}
   </header>
   <div class="doctrine-content">
     {{ content }}
   </div>
-  <nav class="doctrine-nav-footer">
-    {% assign ordered_doctrine = site.doctrine | sort: "order" %}
+  <nav class="doctrine-nav-footer" aria-label="Previous and next part">
     {% for doc in ordered_doctrine %}
       {% if doc.url == page.url %}
-        {% if forloop.index > 1 %}
-          {% assign prev_index = forloop.index0 | minus: 1 %}
-          <a href="{{ ordered_doctrine[prev_index].url | relative_url }}" class="doctrine-prev">&larr; {{ ordered_doctrine[prev_index].nav_title | default: ordered_doctrine[prev_index].title }}</a>
-        {% endif %}
         {% assign next_index = forloop.index0 | plus: 1 %}
         {% if next_index < ordered_doctrine.size %}
-          <a href="{{ ordered_doctrine[next_index].url | relative_url }}" class="doctrine-next">{{ ordered_doctrine[next_index].nav_title | default: ordered_doctrine[next_index].title }} &rarr;</a>
+          {% assign next = ordered_doctrine[next_index] %}
+          <a href="{{ next.url | relative_url }}" class="next"><span>Next &middot; Part {{ romans[next_index] }}</span><b>{{ next.nav_title | default: next.title }} &rarr;</b></a>
+        {% endif %}
+        {% if forloop.index > 1 %}
+          {% assign prev_index = forloop.index0 | minus: 1 %}
+          <a href="{{ ordered_doctrine[prev_index].url | relative_url }}" class="prev">&larr; Part {{ romans[prev_index] }}: {{ ordered_doctrine[prev_index].nav_title | default: ordered_doctrine[prev_index].title }}</a>
         {% endif %}
       {% endif %}
     {% endfor %}

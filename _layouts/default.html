@@ -4,36 +4,36 @@
   {% include head.html %}
 </head>
 <body>
-  <div class="site-wrapper">
-    {% assign is_home = false %}{% if page.url == '/' %}{% assign is_home = true %}{% endif %}
-    <nav class="site-nav{% if is_home %} site-nav--home{% endif %}">
-      {% unless is_home %}
-      <a href="{{ '/' | relative_url }}" class="nav-home">
-        <span class="toner nav-sigil-wrap"><img src="{{ '/assets/sigils/sigil.full.cropped.png' | relative_url }}" alt="Sigil" class="nav-sigil"></span>
-        <span>Order of the Ætherwright</span>
-      </a>
-      {% endunless %}
-      <ul class="nav-doctrine">
-        {% assign ordered_doctrine = site.doctrine | sort: "order" %}
-        {% for doc in ordered_doctrine %}
-        <li{% if page.url == doc.url %} class="active"{% endif %}>
-          <a href="{{ doc.url | relative_url }}">{{ doc.nav_title | default: doc.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </nav>
-    <main class="site-content">
+  {% assign romans = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII" | split: "," %}
+  {% assign ordered_doctrine = site.doctrine | sort: "order" %}
+  <div class="stage">
+    <aside class="margin">
+      <div class="order"><span>The doctrine</span><span class="copy">Copy No. 0417</span></div>
+      <div class="icon">
+        <a href="{{ '/' | relative_url }}" class="nav-home"><img src="{{ '/assets/sigils/sigil.full.cropped.png' | relative_url }}" alt="The Order of the Ætherwright, MMXXV: home"></a>
+        {% for doc in ordered_doctrine %}{% if doc.url == page.url %}<div class="part" aria-hidden="true">{{ romans[forloop.index0] }}</div>{% endif %}{% endfor %}
+      </div>
+      <nav aria-label="The doctrine">
+        <details class="fold" open>
+          <summary class="parts-toggle">The {{ ordered_doctrine.size }} parts</summary>
+          <ol class="parts">
+            {% for doc in ordered_doctrine %}
+            <li><a href="{{ doc.url | relative_url }}"{% if page.url == doc.url %} aria-current="page"{% endif %}><span>{{ romans[forloop.index0] }}</span>{{ doc.nav_title | default: doc.title }}</a></li>
+            {% endfor %}
+          </ol>
+        </details>
+      </nav>
+    </aside>
+    <main class="doc">
       {{ content }}
+      {% include footer.html %}
     </main>
-    {% include footer.html %}
   </div>
   <script>
-    // Each toner element takes a different slice of the scan, so no two copies match.
-    document.querySelectorAll('body *').forEach(function (el) {
-      if (getComputedStyle(el, '::after').mixBlendMode === 'screen') {
-        el.style.setProperty('--tex-y', Math.round(Math.random() * 100) + '%');
-      }
-    });
+    // Each visitor holds a numbered copy, as a circulated tract would be.
+    document.querySelector('.copy').textContent = 'Copy No. ' + String(Math.floor(Math.random() * 9000) + 1000);
+    // Phones start with the parts folded, so the doctrine comes first.
+    if (window.matchMedia('(max-width: 820px)').matches) document.querySelector('.fold').removeAttribute('open');
   </script>
 </body>
 </html>
