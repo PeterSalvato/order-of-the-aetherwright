@@ -6,24 +6,27 @@
 <body>
   {% assign romans = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII" | split: "," %}
   {% assign ordered_doctrine = site.doctrine | sort: "order" %}
+  {% assign last_index = ordered_doctrine.size | minus: 1 %}
   <div class="stage">
-    <aside class="margin">
-      <div class="order"><span>The doctrine</span><span class="copy">Copy No. 0417</span></div>
-      <div class="icon">
-        <a href="{{ '/' | relative_url }}" class="nav-home"><img src="{{ '/assets/sigils/sigil.full.cropped.png' | relative_url }}" alt="The Order of the Ætherwright, MMXXV: home"></a>
-        {% for doc in ordered_doctrine %}{% if doc.url == page.url %}<div class="part" aria-hidden="true">{{ romans[forloop.index0] }}</div>{% endif %}{% endfor %}
-      </div>
-      <nav aria-label="The doctrine">
-        <details class="fold" open>
-          <summary class="parts-toggle">The {{ ordered_doctrine.size }} parts</summary>
-          <ol class="parts">
-            {% for doc in ordered_doctrine %}
-            <li><a href="{{ doc.url | relative_url }}"{% if page.url == doc.url %} aria-current="page"{% endif %}><span>{{ romans[forloop.index0] }}</span>{{ doc.nav_title | default: doc.title }}</a></li>
-            {% endfor %}
-          </ol>
-        </details>
-      </nav>
-    </aside>
+    <header class="runhead">
+      {% assign current = nil %}
+      {% for doc in ordered_doctrine %}{% if doc.url == page.url %}{% assign current = forloop.index0 %}{% endif %}{% endfor %}
+      {% if current == nil %}
+        <span>The Order of the Ætherwright</span>
+        <span class="mid">Doctrine in {{ ordered_doctrine.size }} parts</span>
+        <span class="copy">Copy No. 0417</span>
+      {% else %}
+        <a href="{{ '/' | relative_url }}#contents">&larr; Contents</a>
+        <span class="mid">Part {{ romans[current] }} of {{ romans[last_index] }}</span>
+        {% assign next_index = current | plus: 1 %}
+        {% if next_index < ordered_doctrine.size %}
+          {% assign next = ordered_doctrine[next_index] %}
+          <a href="{{ next.url | relative_url }}" class="nx">Next: {{ next.nav_title | default: next.title }} &rarr;</a>
+        {% else %}
+          <span class="copy">Copy No. 0417</span>
+        {% endif %}
+      {% endif %}
+    </header>
     <main class="doc">
       {{ content }}
       {% include footer.html %}
@@ -31,9 +34,8 @@
   </div>
   <script>
     // Each visitor holds a numbered copy, as a circulated tract would be.
-    document.querySelector('.copy').textContent = 'Copy No. ' + String(Math.floor(Math.random() * 9000) + 1000);
-    // Phones start with the parts folded, so the doctrine comes first.
-    if (window.matchMedia('(max-width: 820px)').matches) document.querySelector('.fold').removeAttribute('open');
+    var copy = document.querySelector('.copy');
+    if (copy) copy.textContent = 'Copy No. ' + String(Math.floor(Math.random() * 9000) + 1000);
   </script>
 </body>
 </html>

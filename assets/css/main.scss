@@ -4,9 +4,9 @@
 // Photocopied occult tract. 80s xerox, played straight.
 // Two values only: ink and paper. A copier has no grays, so hierarchy
 // comes from size, weight, case, rules and reversed (white-on-black) bars.
-// Layout: two columns on white copy paper. The narrow left column holds the
-// sigil, the part number in Roman numerals and the order of parts; the wide
-// right column holds the doctrine. The page stays mostly white.
+// Layout: a tract, not a docs site. The home page is the cover and contents;
+// inside pages carry only a running head (contents, part, next), a poster-size
+// Roman numeral beside the title, and the doctrine. The page stays mostly white.
 
 $paper: #ffffff; // bright copy paper
 $ink: #0b0b0b;
@@ -55,9 +55,8 @@ a {
 }
 
 .stage {
-  display: grid;
-  grid-template-columns: 4fr 8fr;
   min-height: 100vh;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
   max-width: $sheet;
   margin: 0 auto;
   position: relative;
@@ -90,89 +89,45 @@ a {
   text-transform: uppercase;
 }
 
-// Left column
-.margin {
-  border-right: 4px solid $ink;
-  display: grid;
-  align-content: start;
-  gap: 3rem;
-  padding: 1.75rem 1.75rem 2rem 2.25rem;
-}
-
-.order {
+// Running head: where you are, the way back to contents, and the next part
+.runhead {
   @include label;
-  letter-spacing: 0.24em;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  white-space: nowrap;
-}
-
-.icon {
-  justify-self: center;
   display: grid;
-  justify-items: center;
+  grid-template-columns: 1fr auto 1fr;
   gap: 1rem;
-  width: 100%;
-  padding-top: 1rem;
+  align-items: baseline;
+  padding: 1.5rem 0 0.75rem;
+  border-bottom: 4px solid $ink;
 
-  .nav-home { display: block; width: min(72%, 300px); &:hover { background: none; } }
-  img { width: 100%; display: block; filter: grayscale(100%) contrast(250%); mix-blend-mode: multiply; }
+  a { text-decoration: none; padding: 0.1rem 0.25rem; margin: -0.1rem -0.25rem; }
+  .mid { text-align: center; }
+  > :last-child { text-align: right; justify-self: end; }
 }
 
-.part {
-  font-size: clamp(4rem, 8vw, 7rem);
-  font-weight: 700;
-  line-height: 0.85;
-  letter-spacing: -0.02em;
-}
+.doc { min-width: 0; }
 
-.parts-toggle { display: none; }
+// Inside pages: the part number at poster size beside the title
+.doctrine-header {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 2rem;
+  align-items: end;
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid $ink;
 
-.parts {
-  list-style: none;
-  columns: 2;
-  column-gap: 1.5rem;
-  font-size: 0.74rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-top: 4px solid $ink;
-  padding-top: 0.8rem;
-
-  a {
-    display: grid;
-    grid-template-columns: 5.2ch 1fr;
-    padding: 0.15rem 0.35rem;
-    text-decoration: none;
-    break-inside: avoid;
+  .part {
+    font-size: clamp(6rem, 15vw, 13rem);
+    font-weight: 700;
+    line-height: 0.78;
+    letter-spacing: -0.04em;
   }
 
-  [aria-current] { @include reversed; padding: 0.15rem 0.35rem; font-weight: 700; }
-}
-
-// Right column
-.doc {
-  padding: 2.25rem clamp(1.5rem, 5vw, 5rem) 0;
-  min-width: 0;
-}
-
-.kicker {
-  @include label;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  border-bottom: 4px solid $ink;
-  padding-bottom: 0.7rem;
-}
-
-.doctrine-header, .home-header {
   h1 {
-    font-size: clamp(2.4rem, 5.2vw, 4.8rem);
+    font-size: clamp(2.2rem, 4.6vw, 4.4rem);
     line-height: 0.95;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: -0.01em;
-    margin: 2.25rem 0 1.75rem;
     text-wrap: balance;
   }
 
@@ -180,12 +135,16 @@ a {
     font-size: 0.85rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin-top: -0.75rem;
-    margin-bottom: 1.75rem;
+    margin-top: 0.75rem;
   }
 }
 
-.doctrine-header { border-bottom: 1px solid $ink; margin-bottom: 0.5rem; padding-bottom: 0.5rem; }
+// The text column sits under the title, leaving the numeral's column as margin
+.doctrine-content, .doctrine-nav-footer {
+  margin-left: calc(33.33% + 0.7rem);
+}
+
+.doctrine-content { padding-top: 2.5rem; }
 
 .lede, .doctrine-content > p:first-child {
   font-size: clamp(1.2rem, 1.9vw, 1.5rem);
@@ -193,8 +152,24 @@ a {
   max-width: 34ch;
 }
 
+// Cover: the sigil large, the statement beside it
+.cover {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  padding: 3.5rem 0;
+  border-bottom: 1px solid $ink;
+
+  p { max-width: $content-max; margin-bottom: 1rem; }
+}
+
+.cover-sigil { width: 100%; max-width: 440px; display: block; filter: grayscale(100%) contrast(250%); mix-blend-mode: multiply; }
+
+.contents { margin-left: calc(41.67% + 1rem); padding-bottom: 1rem; }
+
 // Doctrine body
-.doctrine-content, .home-content {
+.doctrine-content, .contents {
   > p, > ul, > ol { max-width: $content-max; }
 
   > hr:first-child { display: none; }
@@ -341,7 +316,10 @@ a {
 
   .next { margin-top: 0; }
 
-  .prev {
+  .foot-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -364,48 +342,30 @@ a {
   gap: 0.25rem 1rem;
 }
 
-// Phone: the left column becomes a band, the order of parts folds away
+// Phone: one column; the running head keeps contents and next
 @media (max-width: $narrow) {
   body { font-size: 15px; }
 
-  .stage { grid-template-columns: minmax(0, 1fr); }
+  .stage { padding: 0 16px; }
 
-  .margin {
-    border-right: 0;
-    border-bottom: 4px solid $ink;
-    gap: 1.25rem;
-    padding: 1.25rem 16px;
+  .runhead {
+    grid-template-columns: 1fr auto;
+    .mid { display: none; }
   }
 
-  .icon {
-    grid-template-columns: auto 1fr;
-    justify-items: start;
-    align-items: center;
-    padding-top: 0;
-    .nav-home { width: 110px; }
+  .doctrine-header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding-top: 2rem;
+    .part { font-size: 7rem; }
   }
 
-  .part { font-size: 4.5rem; justify-self: end; }
+  .doctrine-content, .doctrine-nav-footer, .contents { margin-left: 0; }
 
-  .parts-toggle {
-    display: block;
-    border-top: 4px solid $ink;
-    padding-top: 0.7rem;
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    cursor: pointer;
-    list-style: none;
-    &::-webkit-details-marker { display: none; }
-    &::after { content: " +"; }
-  }
-  details[open] .parts-toggle::after { content: " \2212"; }
+  .cover { grid-template-columns: minmax(0, 1fr); padding: 2rem 0; }
+  .cover-sigil { max-width: 260px; margin: 0 auto; }
 
-  .parts { border-top: 0; margin-top: 0.6rem; }
-
-  .doc { padding: 1.5rem 16px 0; }
-  .kicker span:last-child { display: none; }
   .next { flex-direction: column; gap: 0.3rem; }
+  .foot-links { flex-direction: column; }
   .doctrine-content table { font-size: 0.75rem; display: block; overflow-x: auto; }
 }
