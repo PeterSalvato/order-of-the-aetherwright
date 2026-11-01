@@ -11,19 +11,23 @@
     <header class="runhead">
       {% assign current = nil %}
       {% for doc in ordered_doctrine %}{% if doc.url == page.url %}{% assign current = forloop.index0 %}{% endif %}{% endfor %}
+      <a href="{{ '/' | relative_url }}{% if current != nil %}#contents{% endif %}" class="rh-home">{% if current == nil %}The Order of the Ætherwright{% else %}Contents{% endif %}</a>
+      <nav class="rh-parts" aria-label="The {{ ordered_doctrine.size }} parts">
+        <ol>
+          {% for doc in ordered_doctrine %}
+          <li><a href="{{ doc.url | relative_url }}" title="Part {{ romans[forloop.index0] }}: {{ doc.nav_title | default: doc.title }}" aria-label="Part {{ romans[forloop.index0] }}: {{ doc.nav_title | default: doc.title }}"{% if current == forloop.index0 %} aria-current="page"{% endif %}>{{ romans[forloop.index0] }}</a></li>
+          {% endfor %}
+        </ol>
+      </nav>
       {% if current == nil %}
-        <span>The Order of the Ætherwright</span>
-        <span class="mid">Doctrine in {{ ordered_doctrine.size }} parts</span>
-        <span class="copy">Copy No. 0417</span>
+        <span class="rh-end copy">Copy No. 0417</span>
       {% else %}
-        <a href="{{ '/' | relative_url }}#contents">&larr; Contents</a>
-        <span class="mid">Part {{ romans[current] }} of {{ romans[last_index] }}</span>
         {% assign next_index = current | plus: 1 %}
         {% if next_index < ordered_doctrine.size %}
           {% assign next = ordered_doctrine[next_index] %}
-          <a href="{{ next.url | relative_url }}" class="nx">Next: {{ next.nav_title | default: next.title }} &rarr;</a>
+          <a href="{{ next.url | relative_url }}" class="rh-end">Next: {{ next.nav_title | default: next.title }}</a>
         {% else %}
-          <span class="copy">Copy No. 0417</span>
+          <span class="rh-end copy">Copy No. 0417</span>
         {% endif %}
       {% endif %}
     </header>
