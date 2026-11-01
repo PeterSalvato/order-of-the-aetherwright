@@ -137,13 +137,18 @@ a {
   padding: 2.5rem 0 2.5rem;
   border-bottom: 4px solid $ink;
 
+  // Rules above and below join the strokes, the way Roman numerals are cut on
+  // clock faces and monuments. Without them a bare III in a sans reads as bars.
   .part {
+    justify-self: start;
     font-family: $display;
     font-weight: 400;
     font-size: clamp(9rem, 25vw, 21rem);
-    line-height: 0.76;
-    letter-spacing: -0.01em;
-    margin-left: -0.04em;
+    line-height: 0.74;
+    letter-spacing: 0.02em;
+    padding: 0.02em 0.04em 0;
+    border-top: 0.07em solid $ink;
+    border-bottom: 0.07em solid $ink;
   }
 
   h1 {
@@ -164,12 +169,32 @@ a {
   }
 }
 
-// The text column sits under the title, leaving the numeral's column as margin
-.doctrine-content, .doctrine-nav-footer {
-  margin-left: calc(41.67% + 0.85rem);
+// The doctrine runs in two columns under the header: each section's head in
+// the numeral's column at poster size, its text beside it under the title.
+.doctrine-content {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  column-gap: 2rem;
+  padding-top: 2.5rem;
+  overflow-x: clip; // trims the section rules at the sheet edge
+
+  > * { grid-column: 2; min-width: 0; }
+  > h1, > h2 { grid-column: 1; position: relative; }
+  // Beats the element margins below (ul, h3), so a section's first block lines up with its head
+  > h1 + *, > h2 + * { margin-top: 3.5rem !important; padding-top: 1rem; }
+
+  // The rule runs on across the text column, so each section opens on one full-width line
+  > h1::after, > h2::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 300%;
+    border-top: 6px solid $ink;
+  }
 }
 
-.doctrine-content { padding-top: 2.5rem; }
+.doctrine-nav-footer { margin-left: calc(41.67% + 0.85rem); }
 
 .lede, .doctrine-content > p:first-child {
   font-size: clamp(1.2rem, 1.9vw, 1.5rem);
@@ -191,7 +216,16 @@ a {
 
 .cover-sigil { width: 100%; max-width: 440px; display: block; filter: grayscale(100%) contrast(250%); mix-blend-mode: multiply; }
 
-.contents { margin-left: calc(41.67% + 1rem); padding-bottom: 1rem; }
+.contents {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  column-gap: 2rem;
+  padding-bottom: 1rem;
+
+  .bar { grid-column: 1; justify-self: start; }
+  .home-parts { grid-column: 1 / -1; }
+  .next { grid-column: 2; }
+}
 
 // Doctrine body
 .doctrine-content, .contents {
@@ -203,13 +237,15 @@ a {
   h1, h2 {
     font-family: $display;
     font-weight: 400;
-    font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+    font-size: clamp(1.9rem, 3.4vw, 3.2rem);
     line-height: 0.95;
     text-transform: uppercase;
     letter-spacing: 0.01em;
     border-top: 6px solid $ink;
     padding-top: 0.6rem;
     margin: 3.5rem 0 1.25rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
     max-width: 22ch;
     text-wrap: balance;
   }
@@ -316,10 +352,11 @@ a {
 
   li { margin: 0; }
 
+  // Numeral in the left column against the gutter, the part's name across the right
   a {
     display: grid;
-    grid-template-columns: 4.5rem 1fr;
-    gap: 1rem;
+    grid-template-columns: 5fr 7fr;
+    gap: 2rem;
     padding: 0.8rem 0;
     border-bottom: 1px solid $ink;
     text-decoration: none;
@@ -330,7 +367,8 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.01em;
 
-    span { font-family: $font; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em; }
+    // Typed numerals (Space Mono has serifs, so III reads as a numeral) at the title's size
+    span { font-family: $font; font-size: 0.62em; font-weight: 700; letter-spacing: -0.02em; text-align: right; }
   }
 }
 
@@ -407,7 +445,11 @@ a {
     .part { font-size: 9.5rem; }
   }
 
-  .doctrine-content, .doctrine-nav-footer, .contents { margin-left: 0; }
+  .doctrine-nav-footer { margin-left: 0; }
+  .doctrine-content, .contents { grid-template-columns: minmax(0, 1fr); }
+  .doctrine-content > *, .contents > * { grid-column: 1 !important; }
+  .doctrine-content > h1 + *, .doctrine-content > h2 + * { margin-top: 0 !important; padding-top: 0; }
+  .home-parts a { grid-template-columns: 4.6rem 1fr; gap: 0.75rem; span { font-size: 0.5em; text-align: left; } }
 
   .cover { grid-template-columns: minmax(0, 1fr); padding: 2rem 0; }
   .cover-sigil { max-width: 260px; margin: 0 auto; }
