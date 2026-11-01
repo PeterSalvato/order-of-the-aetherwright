@@ -58,7 +58,13 @@ The sigil: a circle enclosing interlocked A-forms that make a six-pointed star, 
 
 ## Toner
 
-The toner scan (`assets/texture/toner.webp`) is screened over black areas, so black picks up streaks and dropout while white stays paper. Each toner element takes a different slice of the scan at load, so no two copies match. Apply it to titles, reversed bars, the sigil and table header rows. Never apply it to body text.
+The toner scan (`assets/texture/toner.webp`) is screened over the page, so black picks up streaks and dropout while white stays paper.
+
+Copier marks come from the machine, so they sit in fixed places on the sheet (decided November 1, 2026). Drum streaks run the full length of the page at a fixed distance from the edge, and roller bands repeat at a fixed interval. So the scan is one layer for the whole page, at a fixed size, anchored to the sheet's top-left corner, and never stretched. A streak runs straight through every black area it crosses. Don't give each element its own random slice of the scan. The live site still does this and needs fixing.
+
+Crush the scan so black stays black and only streaks, scratches and bands show. An even gray wash reads as dirt, not toner.
+
+The page is mostly white. No large flooded black areas (Peter rejected a full-height black column on November 1, 2026). Black is for type, rules, bars and blocks.
 
 ## Components
 
