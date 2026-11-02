@@ -12,6 +12,8 @@ $paper: #ffffff; // bright copy paper
 $ink: #0b0b0b;
 
 $font: 'Space Mono', 'Courier New', monospace;
+// Display: Aptly, the face the sigil's wordmark is set in (Adobe Fonts web project)
+$display: 'aptly', 'Arial Narrow', sans-serif;
 
 $sheet: 1240px;   // the copied sheet; the toner scan is laid out at this width
 $content-max: 60ch;
@@ -116,18 +118,20 @@ a {
   border-bottom: 1px solid $ink;
 
   .part {
+    font-family: $display;
     font-size: clamp(6rem, 15vw, 13rem);
-    font-weight: 700;
+    font-weight: 800;
     line-height: 0.78;
-    letter-spacing: -0.04em;
+    letter-spacing: 0;
   }
 
   h1 {
-    font-size: clamp(2.2rem, 4.6vw, 4.4rem);
-    line-height: 0.95;
+    font-family: $display;
+    font-size: clamp(2.6rem, 6.4vw, 4.6rem);
+    line-height: 0.92;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
     text-wrap: balance;
   }
 
@@ -151,6 +155,9 @@ a {
   line-height: 1.4;
   max-width: 34ch;
 }
+
+// The cover statement in the sigil's face
+.lede { font-family: $display; font-weight: 700; text-transform: uppercase; font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 1; max-width: 22ch; }
 
 // Cover: the sigil large, the statement beside it
 .cover {
@@ -280,10 +287,11 @@ a {
     padding: 0.8rem 0;
     border-bottom: 1px solid $ink;
     text-decoration: none;
-    font-size: clamp(1.1rem, 1.7vw, 1.4rem);
+    font-family: $display;
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
+    letter-spacing: 0;
 
     span { font-weight: 700; }
   }
