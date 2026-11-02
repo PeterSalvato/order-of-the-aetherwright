@@ -1,10 +1,14 @@
 ---
 layout: default
 ---
-{% assign romans = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII" | split: "," %}
+{% assign romans = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII,XIV,XV" | split: "," %}
 {% assign ordered_doctrine = site.doctrine | sort: "order" %}
 {% assign current = 0 %}
 {% for doc in ordered_doctrine %}{% if doc.url == page.url %}{% assign current = forloop.index0 %}{% endif %}{% endfor %}
+{% comment %} One plate of the Mutus Liber (1677) per part, in the book's order; the last part takes its last plate. {% endcomment %}
+{% assign plates = "2,3,4,5,6,7,8,9,10,15" | split: "," %}
+{% assign plate = plates[current] %}
+{% assign plate_index = plate | minus: 1 %}
 <article class="doctrine-page">
   <header class="doctrine-header">
     <div class="part" aria-hidden="true">{{ romans[current] }}</div>
@@ -13,6 +17,10 @@ layout: default
       {% if page.subtitle %}<p class="doctrine-subtitle">{{ page.subtitle }}</p>{% endif %}
     </div>
   </header>
+  <figure class="plate">
+    <img src="{{ '/assets/plates/plate-' | append: plate | append: '.webp' | relative_url }}" alt="Plate {{ romans[plate_index] }} of the Mutus Liber, an engraved alchemical scene" loading="lazy" width="820" height="1150">
+    <figcaption>Pl. {{ romans[plate_index] }} &middot; <i>Mutus Liber</i>, 1677</figcaption>
+  </figure>
   <div class="doctrine-content">
     {{ content }}
   </div>

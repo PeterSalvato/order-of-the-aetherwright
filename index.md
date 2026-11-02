@@ -17,6 +17,10 @@ description: "A structure for creative practice: eight glyphs for sorting work b
 </div>
 
 <section class="contents" id="contents">
+  <figure class="plate">
+    <img src="{{ '/assets/plates/plate-13.webp' | relative_url }}" alt="Plate XIII of the Mutus Liber, an engraved alchemical scene" loading="lazy" width="820" height="1150">
+    <figcaption>Pl. XIII &middot; <i>Mutus Liber</i>, 1677</figcaption>
+  </figure>
   <h2 class="bar">Contents</h2>
   <ol class="home-parts">
     {% for doc in ordered_doctrine %}
