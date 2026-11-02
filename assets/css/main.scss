@@ -351,6 +351,67 @@ a {
 }
 
 // Phone: one column; the running head keeps contents and next
+// Part page: the numeral holds the left column the whole way down, so the margin is never empty
+.doctrine-page {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  column-gap: 2rem;
+
+  .doctrine-header { display: contents; }
+  .doctrine-header .part {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    align-self: start;
+    position: sticky;
+    top: 1.5rem;
+    padding-top: 3rem;
+  }
+  .doctrine-header .titleblock {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid $ink;
+  }
+  .doctrine-content, .doctrine-nav-footer { grid-column: 2; margin-left: 0; }
+
+  // Section heads in the sigil's face, a step up from the text so a long part reads in sections
+  .doctrine-content h1, .doctrine-content h2 {
+    font-family: $display;
+    font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+    letter-spacing: 0.01em;
+    padding: 0.15em 0.35em 0.1em;
+    margin-top: 4rem;
+  }
+}
+
+// Cover contents: the word set large in the left column, held there while the list runs beside it
+.contents {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  column-gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+  margin-left: 0;
+
+  > * { grid-column: 2; }
+  > ol { margin-top: 2.5rem; }
+
+  > h2.bar {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    justify-self: start;
+    position: sticky;
+    top: 1.5rem;
+    margin: 2.2rem 0 0 -0.04em;
+    padding: 0;
+    background: none;
+    color: $ink;
+    font-family: $display;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.9;
+    letter-spacing: 0;
+  }
+}
+
 @media (max-width: $narrow) {
   body { font-size: 15px; }
 
@@ -369,6 +430,12 @@ a {
   }
 
   .doctrine-content, .doctrine-nav-footer, .contents { margin-left: 0; }
+
+  .doctrine-page, .contents { display: block; }
+  .doctrine-page .doctrine-header { display: grid; }
+  .doctrine-page .doctrine-header .part { position: static; padding-top: 0; grid-column: auto; grid-row: auto; }
+  .doctrine-page .doctrine-header .titleblock { padding: 0; border: 0; grid-column: auto; grid-row: auto; }
+  .contents > h2.bar { font-size: 3rem; margin-top: 2rem; }
 
   .cover { grid-template-columns: minmax(0, 1fr); padding: 2rem 0; }
   .cover-sigil { max-width: 260px; margin: 0 auto; }
