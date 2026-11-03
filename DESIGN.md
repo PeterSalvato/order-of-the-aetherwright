@@ -9,9 +9,10 @@ colors:
 
 typography:
   body:     { fontFamily: "Space Mono", fontSize: 15px, lineHeight: 1.65 }
-  heading:  { fontFamily: "Space Mono", fontWeight: 700, textTransform: uppercase }
-  page-title: { fontSize: "clamp(1.8rem, 5.5vw, 2.9rem)", lineHeight: 1 }
-  section-heading: { treatment: reversed bar, fontSize: 0.9rem, letterSpacing: 0.14em }
+  display:  { fontFamily: "Aptly", fontWeight: 700, textTransform: uppercase }   # the sigil's lettering; Adobe Fonts web project dii1fja
+  page-title: { fontFamily: "Aptly", fontSize: "clamp(2.6rem, 6.4vw, 4.6rem)", lineHeight: 0.92 }
+  part-numeral: { fontFamily: "Aptly", fontWeight: 800, fontSize: "clamp(6rem, 15vw, 13rem)" }
+  section-heading: { fontFamily: "Aptly", treatment: reversed bar, fontSize: "clamp(1.5rem, 2.4vw, 2.1rem)" }
   label:    { fontSize: 0.72rem, letterSpacing: 0.18em, textTransform: uppercase }
 
 layout:
@@ -47,10 +48,12 @@ Ink and paper. Any third value would break the copier logic. Hover inverts: a li
 
 ## Typography
 
-Space Mono for everything, bold and capitalized for structure. Labels are small, wide-tracked capitals. This is a placeholder-strength choice: it reads as typed but doesn't yet say "tract." Display type is a candidate for Peter's references (typewriter, rub-down lettering, photostat headlines).
+Two faces. **Aptly** (Nick Shinn, Shinntype) is the display face: the sigil's wordmark is set in it, so the headlines match the mark. It sets the cover statement, the contents, part numerals, part titles and section heads, all in capitals. It loads from Peter's Adobe Fonts web project; the font files are never committed. **Space Mono** sets running text, the running head and small labels.
+
+No typewriter faces: that look belongs to Savepoint (decided November 2, 2026).
 
 - `em` is underlined, not italic, like typed emphasis.
-- Section headings are reversed bars: white capitals knocked out of black.
+- Section headings are reversed bars: Aptly capitals knocked out of black, a clear step up from the text so a long part reads in sections.
 
 ## The mark
 
@@ -60,7 +63,7 @@ The sigil: a circle enclosing interlocked A-forms that make a six-pointed star, 
 
 The toner scan (`assets/texture/toner.webp`) is screened over the page, so black picks up streaks and dropout while white stays paper.
 
-Copier marks come from the machine, so they sit in fixed places on the sheet (decided November 1, 2026). Drum streaks run the full length of the page at a fixed distance from the edge, and roller bands repeat at a fixed interval. So the scan is one layer for the whole page, at a fixed size, anchored to the sheet's top-left corner, and never stretched. A streak runs straight through every black area it crosses. Don't give each element its own random slice of the scan. The live site still does this and needs fixing.
+Copier marks come from the machine, so they sit in fixed places on the sheet (decided November 1, 2026). Drum streaks run the full length of the page at a fixed distance from the edge, and roller bands repeat at a fixed interval. So the scan is one layer for the whole page, at a fixed size, anchored to the sheet's top-left corner, and never stretched. A streak runs straight through every black area it crosses. Don't give each element its own random slice of the scan. 
 
 Crush the scan so black stays black and only streaks, scratches and bands show. An even gray wash reads as dirt, not toner.
 
@@ -68,11 +71,14 @@ The page is mostly white. No large flooded black areas (Peter rejected a full-he
 
 ## Components
 
-### Navigation (under revision)
-A four-column grid of numbered doctrine titles (01 Manifesto … 10 Usage) in small capitals under the masthead, with the current page as a reversed bar. Peter called it "lazy and somewhat boring." It reads as a spreadsheet under a strong sigil, with nothing from the tract world in its structure. Direction is waiting on Peter's references. A tract's contents is a typed list, a pasted-up index or a numbered order of rites, not a grid.
+### Cover and contents
+The cover is the sigil beside the statement of what the Order is. Below it the contents: the word CONTENTS set large in black Aptly in the left column, held in view while the numbered list of parts (Roman numerals, Aptly capitals, ruled) runs beside it. A black "Begin · Part I" block closes it.
 
-### Doctrine header
-A reversed bar with the doctrine number, the title in large bold capitals, a subtitle in small tracked capitals, and a 4px rule.
+### Running head
+Every page carries one line above a heavy rule: on the cover the Order's name, "Doctrine in 10 parts" and a numbered copy; inside a part, "← Contents", "Part II of X" and "Next: [part] →".
+
+### Part page
+The Roman numeral, very large in Aptly, holds the left column and stays in view as you read the part. The title sits beside it in large Aptly capitals over a rule; the text, section heads and the next-part block run in the column under the title. On phones it all stacks: numeral, title, text.
 
 ### Notices
 Blockquotes are boxed warnings with a 3px border and bold text, like the notices in a tract.
