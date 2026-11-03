@@ -4,36 +4,38 @@
   {% include head.html %}
 </head>
 <body>
-  <div class="site-wrapper">
-    {% assign is_home = false %}{% if page.url == '/' %}{% assign is_home = true %}{% endif %}
-    <nav class="site-nav{% if is_home %} site-nav--home{% endif %}">
-      {% unless is_home %}
-      <a href="{{ '/' | relative_url }}" class="nav-home">
-        <span class="toner nav-sigil-wrap"><img src="{{ '/assets/sigils/sigil.full.cropped.png' | relative_url }}" alt="Sigil" class="nav-sigil"></span>
-        <span>Order of the Ætherwright</span>
-      </a>
-      {% endunless %}
-      <ul class="nav-doctrine">
-        {% assign ordered_doctrine = site.doctrine | sort: "order" %}
-        {% for doc in ordered_doctrine %}
-        <li{% if page.url == doc.url %} class="active"{% endif %}>
-          <a href="{{ doc.url | relative_url }}">{{ doc.nav_title | default: doc.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </nav>
-    <main class="site-content">
+  {% assign romans = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII" | split: "," %}
+  {% assign ordered_doctrine = site.doctrine | sort: "order" %}
+  {% assign last_index = ordered_doctrine.size | minus: 1 %}
+  <div class="stage">
+    <header class="runhead">
+      {% assign current = nil %}
+      {% for doc in ordered_doctrine %}{% if doc.url == page.url %}{% assign current = forloop.index0 %}{% endif %}{% endfor %}
+      {% if current == nil %}
+        <span>The Order of the Ætherwright</span>
+        <span class="mid">Doctrine in {{ ordered_doctrine.size }} parts</span>
+        <span class="copy">Copy No. 0417</span>
+      {% else %}
+        <a href="{{ '/' | relative_url }}#contents">&larr; Contents</a>
+        <span class="mid">Part {{ romans[current] }} of {{ romans[last_index] }}</span>
+        {% assign next_index = current | plus: 1 %}
+        {% if next_index < ordered_doctrine.size %}
+          {% assign next = ordered_doctrine[next_index] %}
+          <a href="{{ next.url | relative_url }}" class="nx">Next: {{ next.nav_title | default: next.title }} &rarr;</a>
+        {% else %}
+          <span class="copy">Copy No. 0417</span>
+        {% endif %}
+      {% endif %}
+    </header>
+    <main class="doc">
       {{ content }}
+      {% include footer.html %}
     </main>
-    {% include footer.html %}
   </div>
   <script>
-    // Each toner element takes a different slice of the scan, so no two copies match.
-    document.querySelectorAll('body *').forEach(function (el) {
-      if (getComputedStyle(el, '::after').mixBlendMode === 'screen') {
-        el.style.setProperty('--tex-y', Math.round(Math.random() * 100) + '%');
-      }
-    });
+    // Each visitor holds a numbered copy, as a circulated tract would be.
+    var copy = document.querySelector('.copy');
+    if (copy) copy.textContent = 'Copy No. ' + String(Math.floor(Math.random() * 9000) + 1000);
   </script>
 </body>
 </html>

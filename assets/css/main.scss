@@ -4,64 +4,38 @@
 // Photocopied occult tract. 80s xerox, played straight.
 // Two values only: ink and paper. A copier has no grays, so hierarchy
 // comes from size, weight, case, rules and reversed (white-on-black) bars.
+// Layout: a tract, not a docs site. The home page is the cover and contents;
+// inside pages carry only a running head (contents, part, next), a poster-size
+// Roman numeral beside the title, and the doctrine. The page stays mostly white.
 
 $paper: #ffffff; // bright copy paper
 $ink: #0b0b0b;
 
-$font-body: 'Space Mono', 'Courier New', monospace;
-$font-heading: 'Space Mono', 'Courier New', monospace;
+$font: 'Space Mono', 'Courier New', monospace;
+// Display: Aptly, the face the sigil's wordmark is set in (Adobe Fonts web project)
+$display: 'aptly', 'Arial Narrow', sans-serif;
 
-$max-width: 760px;
-$content-max: 62ch;
+$sheet: 1240px;   // the copied sheet; the toner scan is laid out at this width
+$content-max: 60ch;
+$narrow: 820px;
 
-// Texture hooks. Peter supplies the scans; until then these stay empty.
-//   --paper-texture: page background scan, e.g. url(/assets/texture/paper.png)
-//   --ink-mask:      toner dropout scan, masked onto .xerox elements
-//   --type-texture:  toner scan used as the fill of .xerox type
-:root {
-  --paper-texture: none;
-  --ink-mask: none;
-  --ink-mask-size: 600px;
-  --type-texture: #{"url('../texture/toner.webp')"}; // interpolated for the old Sass on GitHub Pages
-}
+// Toner: one scan for the whole sheet, at a fixed size, anchored to the
+// sheet's top-left corner. Copier marks come from the machine, so drum streaks
+// and roller bands sit in the same places on every black area, as on a real
+// copy, and never move with the window width. Screened over the page, the scan
+// shows only where there is black; white stays paper. Crushed so black stays
+// black and only streaks, scratches and bands show.
+// Peter supplies further scans (paper texture, ink mask) when ready.
+$toner: #{"url('../texture/toner.webp')"}; // interpolated for the old Sass on GitHub Pages
 
-.xerox {
-  -webkit-mask-image: var(--ink-mask);
-  mask-image: var(--ink-mask);
-  -webkit-mask-size: var(--ink-mask-size);
-  mask-size: var(--ink-mask-size);
-}
-
-// Toner: the scan is screened over the element, so black areas pick up the
-// streaks and dropout while white stays clean paper. Used on titles, bars and images.
-@mixin toner {
-  position: relative;
-  isolation: isolate;
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--type-texture) center var(--tex-y, 50%) / cover;
-    filter: contrast(1.8) brightness(0.6);
-    mix-blend-mode: screen;
-    pointer-events: none;
-  }
-}
-
-// Elements without their own fill need paper behind them, since the
-// isolated blend can't see the page.
-h1.xerox, .toner { @include toner; background-color: $paper; }
-.toner { display: block; line-height: 0; }
-
-// Reset
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: $font-body;
-  background: $paper var(--paper-texture);
+  font-family: $font;
+  background: $paper;
   color: $ink;
   line-height: 1.65;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 a {
@@ -71,88 +45,7 @@ a {
   &:hover { background: $ink; color: $paper; text-decoration: none; }
 }
 
-// Reversed bar: white type knocked out of a black block
-@mixin reversed {
-  @include toner;
-  background: $ink;
-  color: $paper;
-  padding: 0.35rem 0.7rem;
-}
-
-.site-wrapper {
-  max-width: $max-width;
-  margin: 0 auto;
-  min-height: 100vh;
-  padding: 0 1.5rem;
-}
-
-// Masthead and contents
-.site-nav {
-  padding: 2rem 0 0;
-}
-
-.nav-home {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding-bottom: 1rem;
-  border-bottom: 4px solid $ink;
-  &:hover { background: none; color: $ink; }
-}
-
-.nav-sigil {
-  width: 40px;
-  height: 40px;
-  filter: grayscale(100%) contrast(250%);
-  mix-blend-mode: multiply;
-}
-
-.nav-doctrine {
-  list-style: none;
-  counter-reset: doctrine;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  border-bottom: 1px solid $ink;
-  padding: 0.6rem 0;
-
-  li {
-    counter-increment: doctrine;
-
-    a {
-      display: block;
-      padding: 0.15rem 0.3rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-
-      &::before {
-        content: counter(doctrine, decimal-leading-zero) "  ";
-        white-space: pre;
-      }
-    }
-
-    &.active a {
-      @include reversed;
-      padding: 0.15rem 0.3rem;
-      font-weight: 700;
-    }
-  }
-}
-
-.site-content {
-  padding: 2.5rem 0 1rem;
-}
-
-// Homepage
-// On the landing the sigil lockup carries the name, so the nav drops its
-// brand block and the title is kept for screen readers only.
-.site-nav--home { border-top: 4px solid $ink; padding-top: 0.5rem; }
+:focus-visible { outline: 2px solid $ink; outline-offset: 3px; }
 
 .visually-hidden {
   position: absolute;
@@ -163,115 +56,143 @@ a {
   white-space: nowrap;
 }
 
-.home-header {
-  margin-bottom: 2rem;
-  text-align: center;
+.stage {
+  min-height: 100vh;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+  max-width: $sheet;
+  margin: 0 auto;
+  position: relative;
+  isolation: isolate;
+  background: $paper;
 
-  h1 {
-    font-family: $font-heading;
-    font-size: clamp(2.2rem, 7vw, 3.6rem);
-    line-height: 0.98;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-
-  .tagline {
-    @include reversed;
-    display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+    background: $toner 0 0 / #{$sheet} auto repeat-y;
+    filter: brightness(0.55) contrast(2.3);
+    mix-blend-mode: screen;
   }
 }
 
-.home-sigil {
-  display: block;
-  width: min(320px, 70%);
-  margin: 0 auto 1.5rem;
-  filter: grayscale(100%) contrast(250%);
-  mix-blend-mode: multiply;
+// Reversed bar: white type knocked out of a black block
+@mixin reversed {
+  background: $ink;
+  color: $paper;
+  padding: 0.35rem 0.75rem;
 }
 
-.home-content {
-  border-top: 4px solid $ink;
-  padding-top: 1.5rem;
-
-  p {
-    margin-bottom: 1rem;
-    max-width: $content-max;
-  }
-
-  .home-links {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    a {
-      align-self: flex-start;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-    }
-  }
+@mixin label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
-// Doctrine pages
-.doctrine-header {
-  margin-bottom: 2.5rem;
-  padding-bottom: 1rem;
+// Running head: where you are, the way back to contents, and the next part
+.runhead {
+  @include label;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 1.5rem 0 0.75rem;
   border-bottom: 4px solid $ink;
 
-  .doctrine-number {
-    @include reversed;
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+  a { text-decoration: none; padding: 0.1rem 0.25rem; margin: -0.1rem -0.25rem; }
+  .mid { text-align: center; }
+  > :last-child { text-align: right; justify-self: end; }
+}
+
+.doc { min-width: 0; }
+
+// Inside pages: the part number at poster size beside the title
+.doctrine-header {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 2rem;
+  align-items: end;
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid $ink;
+
+  .part {
+    font-family: $display;
+    font-size: clamp(6rem, 15vw, 13rem);
+    font-weight: 800;
+    line-height: 0.78;
+    letter-spacing: 0;
   }
 
   h1 {
-    font-family: $font-heading;
-    font-size: clamp(1.8rem, 5.5vw, 2.9rem);
-    line-height: 1;
+    font-family: $display;
+    font-size: clamp(2.6rem, 6.4vw, 4.6rem);
+    line-height: 0.92;
     font-weight: 700;
-    letter-spacing: 0.02em;
     text-transform: uppercase;
+    letter-spacing: 0;
+    text-wrap: balance;
   }
 
   .doctrine-subtitle {
-    font-size: 0.8rem;
-    margin-top: 0.6rem;
+    font-size: 0.85rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    margin-top: 0.75rem;
   }
 }
 
-.doctrine-content {
-  // Headings, tables and rules run the full column; running text keeps a readable measure.
+// The text column sits under the title, leaving the numeral's column as margin
+.doctrine-content, .doctrine-nav-footer {
+  margin-left: calc(33.33% + 0.7rem);
+}
+
+.doctrine-content { padding-top: 2.5rem; }
+
+.lede, .doctrine-content > p:first-child {
+  font-size: clamp(1.2rem, 1.9vw, 1.5rem);
+  line-height: 1.4;
+  max-width: 34ch;
+}
+
+// The cover statement in the sigil's face
+.lede { font-family: $display; font-weight: 700; text-transform: uppercase; font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 1; max-width: 22ch; }
+
+// Cover: the sigil large, the statement beside it
+.cover {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  padding: 3.5rem 0;
+  border-bottom: 1px solid $ink;
+
+  p { max-width: $content-max; margin-bottom: 1rem; }
+}
+
+.cover-sigil { width: 100%; max-width: 440px; display: block; filter: grayscale(100%) contrast(250%); mix-blend-mode: multiply; }
+
+.contents { margin-left: calc(41.67% + 1rem); padding-bottom: 1rem; }
+
+// Doctrine body
+.doctrine-content, .contents {
   > p, > ul, > ol { max-width: $content-max; }
 
-  // Most doctrine files open with a rule, which doubles the header's own rule.
   > hr:first-child { display: none; }
 
-  h1, h2 {
+  h1, h2, .bar {
     @include reversed;
-    font-family: $font-heading;
-    font-size: 0.9rem;
+    display: inline-block;
+    font-size: 0.82rem;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    margin: 2.75rem 0 1rem;
+    margin: 3rem 0 1.5rem;
   }
 
   h3 {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -284,7 +205,6 @@ a {
   p { margin-bottom: 1rem; }
   ul, ol { margin: 0 0 1rem 1.5rem; }
   li { margin-bottom: 0.3rem; }
-
   strong { font-weight: 700; }
 
   em {
@@ -294,7 +214,7 @@ a {
   }
 
   code {
-    font-family: $font-body;
+    font-family: $font;
     font-size: 0.85em;
     padding: 0 0.3em;
     border: 1px solid $ink;
@@ -306,19 +226,16 @@ a {
     overflow-x: auto;
     margin-bottom: 1.25rem;
 
-    code {
-      padding: 0;
-      border: none;
-      font-size: 0.8rem;
-    }
+    code { padding: 0; border: none; font-size: 0.8rem; }
   }
 
   // Notices, like the boxed warnings in a tract
   blockquote {
     border: 3px solid $ink;
-    padding: 0.9rem 1rem;
-    margin: 1.5rem 0;
+    padding: 1rem 1.15rem;
+    margin: 2rem 0;
     font-weight: 700;
+    max-width: $content-max;
 
     p:last-child { margin-bottom: 0; }
   }
@@ -337,9 +254,6 @@ a {
       vertical-align: top;
     }
 
-    // One scan across the whole header row, not one per cell
-    thead tr { @include toner; }
-
     th {
       background: $ink;
       color: $paper;
@@ -357,19 +271,68 @@ a {
   }
 }
 
-.doctrine-nav-footer {
+// Home: the order of parts, large
+.home-parts {
+  list-style: none;
+  margin: 0 !important;
+  max-width: none !important;
+  border-top: 1px solid $ink;
+
+  li { margin: 0; }
+
+  a {
+    display: grid;
+    grid-template-columns: 5ch 1fr;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid $ink;
+    text-decoration: none;
+    font-family: $display;
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0;
+
+    span { font-weight: 700; }
+  }
+}
+
+// Next part: a black block. Previous: a quiet line under it.
+.next {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   gap: 1rem;
   margin-top: 3.5rem;
-  padding-top: 1rem;
-  border-top: 4px solid $ink;
-  font-size: 0.8rem;
+  padding: 1.1rem 1.25rem;
+  background: $ink;
+  color: $paper;
+  text-decoration: none;
   font-weight: 700;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.82rem;
 
-  .doctrine-next { margin-left: auto; }
+  b { font-size: clamp(1.3rem, 2.4vw, 2rem); letter-spacing: -0.01em; }
+  &:hover { background: $ink; color: $paper; b { text-decoration: underline; } }
+}
+
+.doctrine-nav-footer {
+  display: grid;
+  gap: 1rem;
+  margin-top: 3.5rem;
+
+  .next { margin-top: 0; }
+
+  .foot-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
 }
 
 // Footer
@@ -381,13 +344,103 @@ a {
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-
-  p { margin-bottom: 0.25rem; }
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
 }
 
-@media (max-width: 600px) {
-  body { font-size: 14px; }
-  .site-wrapper { padding: 0 1rem; }
-  .nav-doctrine { grid-template-columns: repeat(2, 1fr); }
-  .doctrine-content table { font-size: 0.75rem; }
+// Phone: one column; the running head keeps contents and next
+// Part page: the numeral holds the left column the whole way down, so the margin is never empty
+.doctrine-page {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  column-gap: 2rem;
+
+  .doctrine-header { display: contents; }
+  .doctrine-header .part {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    align-self: start;
+    position: sticky;
+    top: 1.5rem;
+    padding-top: 3rem;
+  }
+  .doctrine-header .titleblock {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid $ink;
+  }
+  .doctrine-content, .doctrine-nav-footer { grid-column: 2; margin-left: 0; }
+
+  // Section heads in the sigil's face, a step up from the text so a long part reads in sections
+  .doctrine-content h1, .doctrine-content h2 {
+    font-family: $display;
+    font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+    letter-spacing: 0.01em;
+    padding: 0.15em 0.35em 0.1em;
+    margin-top: 4rem;
+  }
+}
+
+// Cover contents: the word set large in the left column, held there while the list runs beside it
+.contents {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  column-gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+  margin-left: 0;
+
+  > * { grid-column: 2; }
+  > ol { margin-top: 2.5rem; }
+
+  > h2.bar {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    justify-self: start;
+    position: sticky;
+    top: 1.5rem;
+    margin: 2.2rem 0 0 -0.04em;
+    padding: 0;
+    background: none;
+    color: $ink;
+    font-family: $display;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.9;
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: $narrow) {
+  body { font-size: 15px; }
+
+  .stage { padding: 0 16px; }
+
+  .runhead {
+    grid-template-columns: 1fr auto;
+    .mid { display: none; }
+  }
+
+  .doctrine-header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding-top: 2rem;
+    .part { font-size: 7rem; }
+  }
+
+  .doctrine-content, .doctrine-nav-footer, .contents { margin-left: 0; }
+
+  .doctrine-page, .contents { display: block; }
+  .doctrine-page .doctrine-header { display: grid; }
+  .doctrine-page .doctrine-header .part { position: static; padding-top: 0; grid-column: auto; grid-row: auto; }
+  .doctrine-page .doctrine-header .titleblock { padding: 0; border: 0; grid-column: auto; grid-row: auto; }
+  .contents > h2.bar { font-size: 3rem; margin-top: 2rem; }
+
+  .cover { grid-template-columns: minmax(0, 1fr); padding: 2rem 0; }
+  .cover-sigil { max-width: 260px; margin: 0 auto; }
+
+  .next { flex-direction: column; gap: 0.3rem; }
+  .foot-links { flex-direction: column; }
+  .doctrine-content table { font-size: 0.75rem; display: block; overflow-x: auto; }
 }
