@@ -14,6 +14,7 @@ description: "A structure for creative practice: eight glyphs for sorting work b
     <p>It has three parts. Eight glyphs sort work by domain: design, writing, code, craft and the rest. A codex records what you've decided and why, so the reasoning outlasts the moment. A short morning ritual checks the day's work against both.</p>
     <p>I built it after thirty years of working by instinct. The method was consistent, but it lived only in my head, and it drifted one reasonable decision at a time.</p>
   </div>
+  <a class="turn" href="#contents">Contents &darr;</a>
 </div>
 
 <section class="contents" id="contents">

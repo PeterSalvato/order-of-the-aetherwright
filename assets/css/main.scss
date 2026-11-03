@@ -159,8 +159,11 @@ a {
 // The cover statement in the sigil's face
 .lede { font-family: $display; font-weight: 700; text-transform: uppercase; font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 1; max-width: 22ch; }
 
-// Cover: the sigil large, the statement beside it
+// Cover: the sigil large, the statement beside it. It fills the first screen under the
+// running head, like the front cover of a tract; the contents begin on the next "page"
 .cover {
+  position: relative;
+  min-height: calc(100svh - 3.7rem);
   display: grid;
   grid-template-columns: 5fr 7fr;
   gap: clamp(2rem, 5vw, 4rem);
@@ -169,6 +172,17 @@ a {
   border-bottom: 1px solid $ink;
 
   p { max-width: $content-max; margin-bottom: 1rem; }
+
+  .turn {
+    position: absolute;
+    right: 0;
+    bottom: 1.25rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
 }
 
 .cover-sigil { width: 100%; max-width: 440px; display: block; filter: grayscale(100%) contrast(250%); mix-blend-mode: multiply; }
