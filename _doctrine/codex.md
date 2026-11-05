@@ -46,20 +46,26 @@ Read from the start, a Codex gives the order the work was done in. Read from the
 
 ## Examples
 
-Each Codex can be drawn as a seal: the sigil's wheel with the domains the work used filled in, study at the centre, and the ring giving the end. A double ring is released, a single ring finished, an open ring ongoing, and a struck seal abandoned.
+Three phases, released:
 
-<div class="ex"><p>Three phases, released:</p><pre><code>/Æ/#|●▼||▲◆|||▶⬢⟩⟩[projects.versograms.cherubrock]/</code></pre><figure class="seal" data-codex="/Æ/#|●▼||▲◆|||▶⬢⟩⟩[projects.versograms.cherubrock]/"></figure></div>
+```
+/Æ/#|●▼||▲◆|||▶⬢⟩⟩[projects.versograms.cherubrock]/
+```
 
-<div class="ex"><p>Study only, ongoing:</p><pre><code>/Æ/#|●||●|||●~[systems.signals]/</code></pre><figure class="seal" data-codex="/Æ/#|●||●|||●~[systems.signals]/"></figure></div>
+Study only, ongoing:
 
-<div class="ex"><p>Finished and released:</p><pre><code>/Æ/#|●||▲⬢|||⬢⟩⟩[systems.savepoint.protocol]/</code></pre><figure class="seal" data-codex="/Æ/#|●||▲⬢|||⬢⟩⟩[systems.savepoint.protocol]/"></figure></div>
+```
+/Æ/#|●||●|||●~[systems.signals]/
+```
 
-<div class="ex"><p>Two empty phases, then drawing, released:</p><pre><code>/Æ/#|∅||∅|||▶⟩⟩[studies.miniposters.oneoff]/</code></pre><figure class="seal" data-codex="/Æ/#|∅||∅|||▶⟩⟩[studies.miniposters.oneoff]/"></figure></div>
+Finished and released:
 
-## Write a Codex
+```
+/Æ/#|●||▲⬢|||⬢⟩⟩[systems.savepoint.protocol]/
+```
 
-Mark a work here. Choose the glyphs for each phase in the order the domains became active, choose how the work ended and name it. The Codex is written below with its seal, to copy or save.
+Two empty phases, then drawing, released:
 
-{% include codex-writer.html %}
-
-<script src="{{ '/assets/js/codex.js' | relative_url }}" defer></script>
+```
+/Æ/#|∅||∅|||▶⟩⟩[studies.miniposters.oneoff]/
+```
