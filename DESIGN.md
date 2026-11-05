@@ -95,7 +95,7 @@ Added 5 November 2026. The site moves like an office copier, because toner has n
 
 - **The copy pass:** the first page of a visit is copied once. A hard black lamp line runs down the sheet and the page appears behind it, while the sigil develops out of toner specks, each pixel either toner or paper. It waits for Aptly so headlines never show in a stand-in face.
 - **Feed:** section bars and the next-part block feed in left to right, in hard steps, as they come up the screen.
-- **Hover blocks:** contents rows, running-head links and the footer links invert under a block that wipes across in four hard steps.
+- **Hovers:** an instant invert, white on a black block. A block wiping across in steps was tried and rejected as too modern-web (Peter, 5 November 2026).
 - **Page to page:** the new page feeds out over the old one, top first, in hard steps.
 - **Never:** glows, pulses, smoke, drifting, loops or fades.
 

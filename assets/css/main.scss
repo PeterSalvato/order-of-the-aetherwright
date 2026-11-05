@@ -462,8 +462,8 @@ a {
 // Motion: the copier. Toner on paper has no grays, so nothing fades: black
 // arrives by being scanned, fed or snapped in, with hard edges. The first page
 // of a visit is copied once (the lamp passes down the sheet, the sigil develops
-// out of specks); section bars feed in as they come up; hover blocks wipe across
-// in hard steps; a new page feeds in from the top. Nothing glows, pulses or
+// out of specks); section bars feed in as they come up; a new page feeds in
+// from the top. Hovers snap. Nothing glows, pulses or
 // loops. None of it runs under reduced motion. (Peter, 5 Nov 2026: "80s satanic
 // panic, not glowing magic.")
 $feed: steps(6, jump-end);
@@ -495,24 +495,8 @@ $feed: steps(6, jump-end);
     }
   }
 
-  // Hover blocks: an inverted block wipes across in hard steps, instead of switching on at once.
-  // The block inverts what's under it (difference), so text flips to white exactly as it's covered.
-  .home-parts a, .runhead a, .foot-links a {
-    position: relative;
-    &:hover { background: none; color: $ink; }
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: $paper;
-      mix-blend-mode: difference;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform .16s steps(4, jump-end);
-      pointer-events: none;
-    }
-    &:hover::after, &:focus-visible::after { transform: scaleX(1); }
-  }
+  // Hovers stay an instant invert, as on a printed sheet. A stepped wipe was tried and read as
+  // modern web (Peter, 5 Nov 2026).
 
   // Page to page: the new page feeds out of the copier over the old one, top first
   @view-transition { navigation: auto; }
