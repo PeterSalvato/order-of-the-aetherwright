@@ -31,5 +31,6 @@ exclude:
   - authors.md
   - metadata.yaml
   - doctrine/
+  - tools/
   - node_modules/
   - vendor/
