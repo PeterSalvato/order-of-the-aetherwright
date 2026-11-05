@@ -17,13 +17,13 @@ The eight domain glyphs stand in a fixed wheel. `●` stands at the centre. Chev
 | Position | Glyph | Domain |
 |----------|-------|--------|
 | Top | `▲` | Systems |
-| Top right | `◆` | Craft |
+| Top right | `■` | Design |
 | Right | `▶` | Illustration |
 | Bottom right | `⬢` | Code |
 | Bottom | `▼` | Narrative |
 | Bottom left | `⬟` | Photography |
 | Left | `◀` | Intuition |
-| Top left | `■` | Design |
+| Top left | `◆` | Craft |
 | Centre | `●` | Study |
 
 ## Use
