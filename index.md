@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Order of the Ætherwright"
-description: "A structure for creative practice: eight glyphs for sorting work by domain, a codex for recording decisions, and a short morning ritual."
+description: "A practice for people who make things: eight glyphs name the domains of creative work, and the Codex records how each work was made."
 ---
 
 {% assign romans = "I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII" | split: "," %}
@@ -10,9 +10,9 @@ description: "A structure for creative practice: eight glyphs for sorting work b
   <h1 class="visually-hidden">The Order of the Ætherwright</h1>
   <img class="cover-sigil" src="{{ '/assets/sigils/sigil.full.cropped.png' | relative_url }}" alt="The Order of the Ætherwright, MMXXV">
   <div class="cover-text">
-    <p class="lede">The Order of the Ætherwright is a structure for creative practice.</p>
-    <p>It has three parts. Eight glyphs sort work by domain: design, writing, code, craft and the rest. A codex records what you've decided and why, so the reasoning outlasts the moment. A short morning ritual checks the day's work against both.</p>
-    <p>I built it after thirty years of working by instinct. The method was consistent, but it lived only in my head, and it drifted one reasonable decision at a time.</p>
+    <p class="lede">The Order of the Ætherwright is a practice for people who make things.</p>
+    <p>It keeps a record of how work is made. Eight glyphs name the domains of creative work. A line of glyphs, the Codex, records which domains a work drew on and in what order. The sigil seals what belongs to the Order.</p>
+    <p>This tract sets out the doctrine in five parts. It may be copied and passed on.</p>
   </div>
   <a class="turn" href="#contents">Contents &darr;</a>
 </div>

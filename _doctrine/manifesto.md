@@ -2,53 +2,20 @@
 layout: doctrine
 title: "The Ætherwright Manifesto"
 nav_title: "Manifesto"
-description: "The founding statement of the Order of the Ætherwright: what it is, what it holds, and who it's for."
+description: "The founding articles of the Order of the Ætherwright."
 order: 1
 ---
 
-The Order of the Ætherwright is a practice: a container for Work that is meant to matter.
+Article I. The Order of the Ætherwright is a practice for people who make things. It has no building, no dues and no roll of members.
 
----
+Article II. Work made without a record is lost when the maker forgets how it was made. The Order keeps the record.
 
-## We Believe
+Article III. Every work is marked with glyphs, one for each domain the work drew on, written in the order the work used them. The marked line is the Codex. The glyphs are set out in Part II and the Codex in Part III.
 
-That ritual is a tool. An act repeated on purpose starts to shape the work.
+Article IV. A member names their tools and keeps their bench in order.
 
-That a workspace should feel inhabited.
+Article V. No one is admitted. A person joins the Order by using it.
 
-That language and structure shape thought.
+Article VI. The Order is open to anyone who works with care, at any trade.
 
-That glyphs, metaphors, and spatial logic can become tools of clarity.
-
----
-
-## The Work
-
-To become an Ætherwright is to shape your Work through alignment: symbolic, aesthetic, philosophical.
-
-We compose by hand. We meet distraction with ritual.
-
-The system is a mirror, a bench, a codex, and a chamber.
-
----
-
-## Sovereignty Through Structure
-
-We build without waiting for permission.
-
-We make systems that serve reflection, construction, and communion.
-
-We name our tools. We arrange our interfaces.
-
-We bring the sacred into the scaffold.
-
----
-
-## Who It's For
-
-The Order is open to anyone who works with care, whether the work is circuits or soil, spreadsheets or steel.
-
-Entry is a choice. You cross the threshold on purpose, and no one admits you but yourself.
-
-The tools wait. They will be ready when you reach for them.
-
+> NOTICE. This tract may be copied and passed on.

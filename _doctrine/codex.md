@@ -1,92 +1,71 @@
 ---
 layout: doctrine
-title: "Ætherwright Codex Syntax v1.1"
+title: "The Codex"
 nav_title: "Codex"
-description: "Codex syntax: how one line of glyphs records the phases of a creative project."
-order: 4
+description: "How one line of glyphs records the phases of a work, and how to read it."
+order: 3
 ---
 
-A Codex string is one line of glyphs that records the phases of a creative project. It is plain Unicode text, so it works in a terminal, in markdown, in print, and in an archive.
-
----
-
-## Format
+A Codex is one line of glyphs that records how a work was made, phase by phase. It is plain text, so it can be written anywhere: in a margin, at the head of a notebook page, in a footer or in a commit message.
 
 ```
-/Æ/#|●▼||▲◆|||▶⬣⟩⟩[projects.versograms.cherubrock]/
+/Æ/#|●▼||▲◆|||▶⬢⟩⟩[projects.versograms.cherubrock]/
 ```
 
----
+## The marks
 
-## Syntax Reference
+| Mark | Meaning |
+|------|---------|
+| `/ … /` | Opens and closes the Codex |
+| `Æ` | Marks the line as a Codex |
+| `#` | The first cut: where the work begins |
+| <code>&#124;</code> <code>&#124;&#124;</code> <code>&#124;&#124;&#124;</code> | First, second and third phase, and so on |
+| `●` | Study |
+| `∅` | A phase in which no domain was active |
+| `▲ ▼ ◀ ▶ ■ ◆ ⬟ ⬢` | The domains active in that phase, from [Part II]({{ '/doctrine/glyphs/' | relative_url }}) |
+| `⟩` | Finished, not released |
+| `⟩⟩` | Finished and released |
+| `~` | Ongoing, with no end |
+| `×` | Abandoned |
+| `[ … ]` | The work's name, its parts separated by dots |
 
-- `/.../` → Container for entire Codex string
-- `Æ` → Protocol identifier (Ætherwright Codex)
-- `#` → Grid/initiation – the first structural or symbolic cut
-- `|` `||` `|||` → Phase markers (Phase 1, Phase 2, Phase 3, etc.)
-- `●` → Input / research / orientation phase (not a domain)
-- `∅` → Null phase (no domains active)
-- Domain glyphs → Active domains (see [Glyphs]({{ '/doctrine/glyphs/' | relative_url }}))
-- `⟩` → Completed but not released
-- `⟩⟩` → Completed and released
-- `~` → Ongoing / perpetual state
-- `×` → Aborted / discarded
-- `[path]` → Dot-delimited project identifier or namespace
+## The rules
 
----
+1. A Codex opens with `#` and closes with one of the four end marks: `⟩`, `⟩⟩`, `~` or `×`.
+2. It holds one phase or more.
+3. Within a phase, glyphs are written in the order each domain first became active.
+4. `●` may stand alone in a phase or come before the domain glyphs.
+5. `∅` may stand in a phase but may not close the Codex.
+6. A Codex has no spaces.
 
-## Rules
+## Reading a Codex
 
-- Must begin with `#` and end with a terminal state symbol.
-- May contain 1 to N phases.
-- `●` may appear alone or before domain glyphs.
-- `∅` is valid within a phase but not at the end.
-- All symbols must be Unicode-safe and render in monospaced environments.
-- Leave out spaces. The compressed form is the canonical one.
+A glyph that appears in more than one phase marks a domain the work came back to. `▶` in the first phase and again in the third means the drawing was sketched early and finished late. A Codex that opens with `●` began with study.
 
----
-
-## Domain Reuse and Relational Proof
-
-Domain glyphs may repeat across phases, and that is deliberate.
-
-A Codex string is a **relational proof**: it records how different faculties worked together *across time*. When a domain appears more than once, the string shows its role in the process changing.
-
-`▶` might first appear as sketching, then return in a later phase as final rendering. The repeat records **refinement**.
-
----
+Read from the start, a Codex gives the order the work was done in. Read from the end, it traces a finished work back to where it began.
 
 ## Examples
 
-### Full Process (3 phases, released)
+Three phases, released:
+
 ```
-/Æ/#|●▼||▲◆|||▶⬣⟩⟩[projects.versograms.cherubrock]/
+/Æ/#|●▼||▲◆|||▶⬢⟩⟩[projects.versograms.cherubrock]/
 ```
 
-### Input-only Ongoing System
+Study only, ongoing:
+
 ```
 /Æ/#|●||●|||●~[systems.signals]/
 ```
 
-### Completed, Not Released
+Finished and released:
+
 ```
-/Æ/#|●||▲⬣|||⬣⟩[systems.savepoint.protocol]/
+/Æ/#|●||▲⬢|||⬢⟩⟩[systems.savepoint.protocol]/
 ```
 
-### Null + Output Only
+Two empty phases, then drawing, released:
+
 ```
 /Æ/#|∅||∅|||▶⟩⟩[studies.miniposters.oneoff]/
 ```
-
----
-
-## Usage Context
-
-Codex strings are intended for:
-
-- Margins and footers of digital or printed works
-- Archival headers in notebooks or logs
-- Symbolic signature of creative process
-- Metadata blocks, commit messages, or symbolic versioning
-
-Each one is a **ritual execution record**: proof of work actually done.
