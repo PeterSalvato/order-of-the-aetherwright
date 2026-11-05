@@ -32,9 +32,8 @@
       {% include footer.html %}
     </main>
   </div>
-  <div class="lamp" aria-hidden="true"></div>
   <script>
-    // The sigil develops out of toner specks while the lamp passes: each pixel is either
+    // The sigil develops out of toner specks, once per visit: each pixel is either
     // toner or paper, never gray, so it comes up like an image on a copy.
     (function () {
       var img = document.querySelector('.cover-sigil');
@@ -51,7 +50,7 @@
         var n = c.width * c.height, seed = new Float32Array(n);
         for (var i = 0; i < n; i++) seed[i] = Math.random();
         img.style.visibility = 'hidden'; img.parentNode.insertBefore(c, img); img.style.position = 'absolute';
-        var t0 = performance.now() + 250, dur = 900;
+        var t0 = performance.now() + 150, dur = 650;
         (function frame(now) {
           var t = Math.max(0, Math.min(1, (now - t0) / dur)), d = out.data, s = src.data;
           for (var i = 0, j = 0; i < n; i++, j += 4) {
@@ -64,7 +63,7 @@
         })(performance.now());
       }
       function ready() { if (img.complete) run(); else img.addEventListener('load', run); }
-      // Starts with the lamp, which waits for the headline font
+      // Waits for the headline font, so the cover appears whole
       (function wait() { if (document.documentElement.classList.contains('fonts-in')) ready(); else setTimeout(wait, 30); })();
     })();
 

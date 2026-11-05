@@ -91,13 +91,9 @@ Blockquotes are boxed warnings with a 3px border and bold text, like the notices
 
 ## Motion
 
-Added 5 November 2026. The site moves like an office copier, because toner has no grays and nothing may fade (Peter: "80s satanic panic, not glowing magic"). Black arrives by being scanned, fed or snapped in, with hard edges. The code is the Motion block at the end of `main.scss`, a flag in `head.html` and the sigil script in `default.html`. None of it runs under reduced motion.
+Almost none (5 November 2026). A copied tract is a still object, so the page doesn't move. The one exception: the first time the cover is seen in a visit, the sigil develops out of toner specks in about two-thirds of a second, every pixel either toner or paper. Hovers are an instant invert. Off under reduced motion.
 
-- **The copy pass:** the first page of a visit is copied once. A hard black lamp line runs down the sheet and the page appears behind it, while the sigil develops out of toner specks, each pixel either toner or paper. It waits for Aptly so headlines never show in a stand-in face.
-- **Feed:** section bars and the next-part block feed in left to right, in hard steps, as they come up the screen.
-- **Hovers:** an instant invert, white on a black block. A block wiping across in steps was tried and rejected as too modern-web (Peter, 5 November 2026).
-- **Page to page:** the new page feeds out over the old one, top first, in hard steps.
-- **Never:** glows, pulses, smoke, drifting, loops or fades.
+Tried and cut the same day: a copier-lamp line passing down the page, section bars feeding in on scroll, stepped hover wipes, and a stepped page change. Peter: "hokey and cheap", "too modern web"; "this needs to be super subtle".
 
 ## Layout
 

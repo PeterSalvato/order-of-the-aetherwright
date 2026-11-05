@@ -459,51 +459,10 @@ a {
   .doctrine-content table { font-size: 0.75rem; display: block; overflow-x: auto; }
 }
 
-// Motion: the copier. Toner on paper has no grays, so nothing fades: black
-// arrives by being scanned, fed or snapped in, with hard edges. The first page
-// of a visit is copied once (the lamp passes down the sheet, the sigil develops
-// out of specks); section bars feed in as they come up; a new page feeds in
-// from the top. Hovers snap. Nothing glows, pulses or
-// loops. None of it runs under reduced motion. (Peter, 5 Nov 2026: "80s satanic
-// panic, not glowing magic.")
-$feed: steps(6, jump-end);
-
-.lamp { display: none; }
-
-@media (prefers-reduced-motion: no-preference) {
-  // The lamp: paper over the sheet, its leading edge a hard black line, drawn down once
-  .copying .lamp {
-    display: block;
-    position: fixed;
-    inset: 0;
-    z-index: 20;
-    pointer-events: none;
-    background: $paper;
-    border-top: 3px solid $ink;
-    animation: lamp .9s cubic-bezier(.45, 0, .55, 1) .1s both;
-    animation-play-state: paused;
-  }
-  .copying.fonts-in .lamp { animation-play-state: running; }
-
-  // Section bars and the black next-part block feed through the rollers as they come up
-  @supports (animation-timeline: view()) {
-    .doctrine-content h1, .doctrine-content h2, .next {
-      animation: feed linear both;
-      animation-timeline: view();
-      animation-range: entry 20% entry 70%;
-      animation-timing-function: $feed;
-    }
-  }
-
-  // Hovers stay an instant invert, as on a printed sheet. A stepped wipe was tried and read as
-  // modern web (Peter, 5 Nov 2026).
-
-  // Page to page: the new page feeds out of the copier over the old one, top first
-  @view-transition { navigation: auto; }
-  ::view-transition-old(root) { animation: none; }
-  ::view-transition-new(root) { animation: page .32s steps(8, jump-end) both; }
-}
-
-@keyframes lamp { from { transform: translateY(0); } to { transform: translateY(100%); } }
-@keyframes feed { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
-@keyframes page { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+// Motion: almost none. A copied tract is a still object, so the page doesn't move.
+// The one exception is the sigil, which develops out of toner specks the first
+// time the cover is seen in a visit (script in default.html; every pixel toner or
+// paper, never gray). Hovers are an instant invert. A copier-lamp pass, bars
+// feeding in on scroll, stepped hover wipes and a stepped page change were all
+// tried on 5 Nov 2026 and cut: Peter found them "hokey and cheap" and "too modern
+// web"; the motion here has to be super subtle.
