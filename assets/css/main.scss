@@ -459,10 +459,8 @@ a {
   .doctrine-content table { font-size: 0.75rem; display: block; overflow-x: auto; }
 }
 
-// Motion: almost none. A copied tract is a still object, so the page doesn't move.
-// The one exception is the sigil, which develops out of toner specks the first
-// time the cover is seen in a visit (script in default.html; every pixel toner or
-// paper, never gray). Hovers are an instant invert. A copier-lamp pass, bars
-// feeding in on scroll, stepped hover wipes and a stepped page change were all
-// tried on 5 Nov 2026 and cut: Peter found them "hokey and cheap" and "too modern
-// web"; the motion here has to be super subtle.
+// Motion: none. A copied tract is a still object, so the page doesn't move, and
+// hovers are an instant invert. Tried and cut on 5 Nov 2026: a copier-lamp pass,
+// bars feeding in on scroll, stepped hover wipes, a stepped page change and the
+// sigil developing out of toner specks. Peter: "hokey and cheap", "too modern
+// web", "tacky".

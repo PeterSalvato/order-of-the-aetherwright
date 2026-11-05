@@ -33,40 +33,6 @@
     </main>
   </div>
   <script>
-    // The sigil develops out of toner specks, once per visit: each pixel is either
-    // toner or paper, never gray, so it comes up like an image on a copy.
-    (function () {
-      var img = document.querySelector('.cover-sigil');
-      if (!img || !document.documentElement.classList.contains('copying')) return;
-      function run() {
-        var w = img.clientWidth, h = img.clientHeight;
-        if (!w || !h) return;
-        var c = document.createElement('canvas'), k = Math.min(2, devicePixelRatio || 1);
-        c.width = Math.round(w * k); c.height = Math.round(h * k);
-        c.className = img.className; c.style.width = w + 'px'; c.style.height = h + 'px';
-        c.setAttribute('aria-hidden', 'true');
-        var x = c.getContext('2d'); x.drawImage(img, 0, 0, c.width, c.height);
-        var src = x.getImageData(0, 0, c.width, c.height), out = x.createImageData(c.width, c.height);
-        var n = c.width * c.height, seed = new Float32Array(n);
-        for (var i = 0; i < n; i++) seed[i] = Math.random();
-        img.style.visibility = 'hidden'; img.parentNode.insertBefore(c, img); img.style.position = 'absolute';
-        var t0 = performance.now() + 150, dur = 650;
-        (function frame(now) {
-          var t = Math.max(0, Math.min(1, (now - t0) / dur)), d = out.data, s = src.data;
-          for (var i = 0, j = 0; i < n; i++, j += 4) {
-            var on = seed[i] < t * t * (3 - 2 * t);
-            d[j] = on ? s[j] : 255; d[j + 1] = on ? s[j + 1] : 255; d[j + 2] = on ? s[j + 2] : 255; d[j + 3] = 255;
-          }
-          x.putImageData(out, 0, 0);
-          if (t < 1) requestAnimationFrame(frame);
-          else { c.remove(); img.style.visibility = ''; img.style.position = ''; }
-        })(performance.now());
-      }
-      function ready() { if (img.complete) run(); else img.addEventListener('load', run); }
-      // Waits for the headline font, so the cover appears whole
-      (function wait() { if (document.documentElement.classList.contains('fonts-in')) ready(); else setTimeout(wait, 30); })();
-    })();
-
     // Each visitor holds a numbered copy, as a circulated tract would be.
     var copy = document.querySelector('.copy');
     if (copy) copy.textContent = 'Copy No. ' + String(Math.floor(Math.random() * 9000) + 1000);

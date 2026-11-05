@@ -91,9 +91,9 @@ Blockquotes are boxed warnings with a 3px border and bold text, like the notices
 
 ## Motion
 
-Almost none (5 November 2026). A copied tract is a still object, so the page doesn't move. The one exception: the first time the cover is seen in a visit, the sigil develops out of toner specks in about two-thirds of a second, every pixel either toner or paper. Hovers are an instant invert. Off under reduced motion.
+None (5 November 2026). A copied tract is a still object, so the page doesn't move. Hovers are an instant invert and pages change at once, like turning a sheet.
 
-Tried and cut the same day: a copier-lamp line passing down the page, section bars feeding in on scroll, stepped hover wipes, and a stepped page change. Peter: "hokey and cheap", "too modern web"; "this needs to be super subtle".
+Tried and cut the same day: a copier-lamp line passing down the page, section bars feeding in on scroll, stepped hover wipes, a stepped page change, and the sigil developing out of toner specks. Peter: "hokey and cheap", "too modern web", "tacky". Don't add motion here without his ask.
 
 ## Layout
 
