@@ -3,6 +3,12 @@
 <title>{% if page.title and page.title != site.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} — Symbolic Structure for Creative Work{% endif %}</title>
 <meta name="description" content="{{ page.description | default: site.description }}">
 <meta name="author" content="{{ site.author }}">
+<script>
+  // The first page of a visit is copied: the lamp passes once (see Motion in main.scss)
+  try { if (!sessionStorage.getItem('copied') && !matchMedia('(prefers-reduced-motion: reduce)').matches) { document.documentElement.classList.add('copying'); sessionStorage.setItem('copied', '1'); }
+  // The copy runs once the Aptly headlines have loaded, so they never show in a stand-in face (1.5s at most)
+  if (document.documentElement.classList.contains('copying')) { var go = function () { document.documentElement.classList.add('fonts-in'); }; setTimeout(go, 1500); if (document.fonts) addEventListener('load', function () { document.fonts.load('700 1em aptly').then(go, go); }); } } catch (e) {}
+</script>
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">

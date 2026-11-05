@@ -89,6 +89,16 @@ Blockquotes are boxed warnings with a 3px border and bold text, like the notices
 ### Rules
 4px for major breaks (masthead, header, footer nav), 1px for minor, and a double rule above the footer.
 
+## Motion
+
+Added 5 November 2026. The site moves like an office copier, because toner has no grays and nothing may fade (Peter: "80s satanic panic, not glowing magic"). Black arrives by being scanned, fed or snapped in, with hard edges. The code is the Motion block at the end of `main.scss`, a flag in `head.html` and the sigil script in `default.html`. None of it runs under reduced motion.
+
+- **The copy pass:** the first page of a visit is copied once. A hard black lamp line runs down the sheet and the page appears behind it, while the sigil develops out of toner specks, each pixel either toner or paper. It waits for Aptly so headlines never show in a stand-in face.
+- **Feed:** section bars and the next-part block feed in left to right, in hard steps, as they come up the screen.
+- **Hover blocks:** contents rows, running-head links and the footer links invert under a block that wipes across in four hard steps.
+- **Page to page:** the new page feeds out over the old one, top first, in hard steps.
+- **Never:** glows, pulses, smoke, drifting, loops or fades.
+
 ## Layout
 
 A single 760px column. Running text holds to 62ch. Headings, tables and rules run the full column. Below 600px the nav goes to two columns.
