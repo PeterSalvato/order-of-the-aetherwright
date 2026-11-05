@@ -464,3 +464,97 @@ a {
 // bars feeding in on scroll, stepped hover wipes, a stepped page change and the
 // sigil developing out of toner specks. Peter: "hokey and cheap", "too modern
 // web", "tacky".
+
+// The Codex, used (Part III): each example beside its seal, and the writer.
+// The seal is drawn by assets/js/codex.js from the Codex string itself.
+.doctrine-content {
+  .ex {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 120px;
+    column-gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    > p { grid-column: 1 / -1; margin-bottom: 0.5rem; }
+    > pre { margin: 0; }
+    .seal { margin: 0; width: 120px; height: 120px; }
+  }
+  .seal svg { display: block; width: 100%; height: auto; }
+}
+
+.codex-writer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 2rem;
+  align-items: start;
+  margin: 1.5rem 0 1rem;
+  padding: 1.25rem;
+  border: 3px solid $ink;
+
+  &[hidden] { display: none; }
+
+  fieldset { border: 0; margin: 0 0 1rem; padding: 0; }
+  legend { @include label; margin-bottom: 0.4rem; }
+
+  button, .cw-ends span {
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $ink;
+    background: $paper;
+    border: 2px solid $ink;
+    border-radius: 0;
+    padding: 0.35rem 0.6rem;
+    cursor: pointer;
+    &:hover { background: $ink; color: $paper; }
+  }
+
+  .cw-phase { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
+  .cw-glyph {
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0;
+    font-size: 1.15rem;
+    line-height: 1;
+    &[aria-pressed="true"] { background: $ink; color: $paper; }
+  }
+  .cw-remove { margin-left: auto; border-width: 0 0 2px; padding: 0.2rem 0; &:hover { background: none; color: $ink; } }
+  .cw-add { margin-bottom: 1.25rem; }
+
+  .cw-ends {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    label { position: relative; }
+    input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+    span { display: inline-block; }
+    input:checked + span { background: $ink; color: $paper; }
+    input:focus-visible + span { outline: 2px solid $ink; outline-offset: 3px; }
+  }
+
+  .cw-label { display: grid; gap: 0.4rem; @include label; }
+  .cw-name {
+    font: inherit;
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: 400;
+    padding: 0.5rem 0.6rem;
+    border: 2px solid $ink;
+    border-radius: 0;
+    background: $paper;
+    color: $ink;
+  }
+
+  .cw-result { display: grid; gap: 1rem; justify-items: start; }
+  .cw-seal { width: 200px; }
+  .cw-seal svg { display: block; width: 100%; height: auto; }
+  .cw-string { display: block; width: 100%; font-size: 0.78rem; overflow-wrap: anywhere; padding: 0.6rem; border: 1px solid $ink; }
+  .cw-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+}
+
+@media (max-width: $narrow) {
+  .codex-writer { grid-template-columns: minmax(0, 1fr); }
+  .doctrine-content .ex { grid-template-columns: minmax(0, 1fr) 84px; .seal { width: 84px; height: 84px; } }
+}
