@@ -6,7 +6,7 @@ from fontTools.subset import Subsetter, Options
 from fontTools.pens.boundsPen import BoundsPen
 from fontTools.pens.ttGlyphPen import TTGlyphPen
 from fontTools.pens.transformPen import TransformPen
-chars = '△▽◁▷□◇⬠⬡#|>∴'
+chars = '△▽◁▷□◇⬠⬡#|<>∴'
 f = TTFont(sys.argv[1])
 o = Options(); o.layout_features = []; o.flavor = None
 s = Subsetter(o); s.populate(text=chars); s.subset(f)
