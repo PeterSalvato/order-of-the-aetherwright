@@ -2,29 +2,27 @@
 layout: doctrine
 title: "The Glyphs"
 nav_title: "Glyphs"
-description: "The eight glyphs that name the domains of creative work, and the ninth that marks study. A closed set."
+description: "The eight glyphs that name the domains of creative work. A closed set."
 order: 2
 ---
 
-The Order sorts creative work into eight domains. Each domain has one glyph. The set is closed: no glyph will be added, removed or redrawn.
+The Order sorts creative work into eight domains. Each domain has one glyph. The set is closed: no glyph will be added.
+
+The glyphs are plain shapes, drawn in outline: a triangle pointing four ways, a square, a diamond, a pentagon and a hexagon.
 
 | Glyph | Domain | Covers |
 |-------|--------|--------|
-| `▲` | Systems | Structure, interaction, strategy, frameworks |
-| `▼` | Narrative | Writing, storytelling, sequence |
-| `◀` | Intuition | Reflection, process, what the maker notices in themselves |
-| `▶` | Illustration | Drawing, rendering, output |
-| `■` | Design | Layout, grid, type, composition |
-| `◆` | Craft | Physical work, materials, printmaking, objects |
-| `⬟` | Photography | Framing, capture, observation |
-| `⬢` | Code | Software, engineering, logic |
+| `△` | Systems | UX, systems thinking, research, strategy |
+| `▽` | Narrative | Worldbuilding, storytelling |
+| `◁` | Intuition | Conceptualizing, process, intuition |
+| `▷` | Illustration | Any drawn or digital image-making, hand lettering |
+| `□` | Design | Design, branding |
+| `◇` | Craft | Physical making: bookbinding, printmaking, objects |
+| `⬠` | Photography | Photography, visual storytelling |
+| `⬡` | Code | Software, engineering |
 
-A ninth glyph marks the time before the work: reading, gathering and study. It names no domain.
+Each glyph is a single character, so it can be drawn by hand or typed in any text.
 
-| Glyph | Marks |
-|-------|-------|
-| `●` | Study |
-
-All nine glyphs are solid. Each is a single character, so it can be written by hand, typed in any text or printed by a terminal.
+A domain, once learned, stays with the maker.
 
 The glyphs are written in a Codex, set out in [Part III]({{ '/doctrine/codex/' | relative_url }}).

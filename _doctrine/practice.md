@@ -10,7 +10,7 @@ The Order needs no equipment. A pencil is enough.
 
 ## Marking the work
 
-When a work is finished, set aside or abandoned, write its Codex. Write the phases as they happened, and the glyphs in each phase in the order the domains became active.
+Keep the Codex as the work goes. At each sitting, ask what you are doing, and add the phase the work is in and the domains it is in now. When the work is finished, close the line with `∴>`.
 
 ## Where the Codex is written
 

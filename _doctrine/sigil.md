@@ -16,16 +16,16 @@ A ring holds a star drawn as one unbroken line through eight points. Each point 
 
 | Point | Glyph | Domain |
 |-------|-------|--------|
-| Top, left | `◀` | Intuition |
-| Top, right | `▶` | Illustration |
-| Upper left | `■` | Design |
-| Upper right | `◆` | Craft |
-| Lower left | `⬟` | Photography |
-| Lower right | `⬢` | Code |
-| Bottom, left | `▼` | Narrative |
-| Bottom, right | `▲` | Systems |
+| Top, left | `◁` | Intuition |
+| Top, right | `▷` | Illustration |
+| Upper left | `□` | Design |
+| Upper right | `◇` | Craft |
+| Lower left | `⬠` | Photography |
+| Lower right | `⬡` | Code |
+| Bottom, left | `▽` | Narrative |
+| Bottom, right | `△` | Systems |
 
-Followed from the top, the line meets the points in this order: `◀ ▼ ■ ⬢ ▶ ▲ ◆ ⬟`, and returns to `◀`.
+Followed from the top, the line meets the points in this order: `◁ ▽ □ ⬡ ▷ △ ◇ ⬠`, and returns to `◁`.
 
 ## The sigil of a work
 

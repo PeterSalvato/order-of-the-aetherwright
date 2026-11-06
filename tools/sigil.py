@@ -5,7 +5,7 @@ eight points, one domain per point. A work's sigil draws only the glyphs of the 
 involved, and the shortest stretch of the star's line that passes through all of their points.
 All eight domains give back the whole star. Order and outcome are left to the Codex.
 
-    python tools/sigil.py ▲⬢ > savepoint.svg
+    python tools/sigil.py △⬡ > savepoint.svg
 """
 import sys
 
@@ -15,15 +15,15 @@ V = {'T1': (430, 122), 'T2': (490, 122), 'B1': (424, 698), 'B2': (488, 698),
      'UL': (192, 252), 'UR': (728, 256), 'LL': (192, 562), 'LR': (728, 560)}
 # The order the line meets them, and the domain each carries
 LOOP = ['T1', 'B1', 'UL', 'LR', 'T2', 'B2', 'UR', 'LL']
-AT = {'◀': 'T1', '▼': 'B1', '■': 'UL', '⬢': 'LR', '▶': 'T2', '▲': 'B2', '◆': 'UR', '⬟': 'LL'}
+AT = {'◁': 'T1', '▽': 'B1', '□': 'UL', '⬡': 'LR', '▷': 'T2', '△': 'B2', '◇': 'UR', '⬠': 'LL'}
 # Where each glyph is set beside its point, outside the ring
 SLOT = {'T1': (429, 28), 'T2': (491, 28), 'B1': (432, 794), 'B2': (488, 794),
         'UL': (118, 198), 'UR': (803, 199), 'LL': (116, 601), 'LR': (803, 600)}
-SHAPE = {'▲': [(0, -14), (15, 12), (-15, 12)], '▼': [(0, 14), (15, -12), (-15, -12)],
-         '◀': [(-14, 0), (12, 15), (12, -15)], '▶': [(14, 0), (-12, 15), (-12, -15)],
-         '◆': [(0, -19), (19, 0), (0, 19), (-19, 0)], '■': [(-14, -14), (14, -14), (14, 14), (-14, 14)],
-         '⬟': [(0, -16), (16, -4), (10, 15), (-10, 15), (-16, -4)],
-         '⬢': [(0, -17), (15, -8), (15, 8), (0, 17), (-15, 8), (-15, -8)]}
+SHAPE = {'△': [(0, -14), (15, 12), (-15, 12)], '▽': [(0, 14), (15, -12), (-15, -12)],
+         '◁': [(-14, 0), (12, 15), (12, -15)], '▷': [(14, 0), (-12, 15), (-12, -15)],
+         '◇': [(0, -19), (19, 0), (0, 19), (-19, 0)], '□': [(-14, -14), (14, -14), (14, 14), (-14, 14)],
+         '⬠': [(0, -16), (16, -4), (10, 15), (-10, 15), (-16, -4)],
+         '⬡': [(0, -17), (15, -8), (15, 8), (0, 17), (-15, 8), (-15, -8)]}
 
 
 def stretch(points):

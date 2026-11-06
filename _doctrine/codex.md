@@ -2,70 +2,90 @@
 layout: doctrine
 title: "The Codex"
 nav_title: "Codex"
-description: "How one line of glyphs records the phases of a work, and how to read it."
+description: "One line of glyphs, kept during a work and read after it."
 order: 3
 ---
 
-A Codex is one line of glyphs that records how a work was made, phase by phase. It is plain text, so it can be written anywhere: in a margin, at the head of a notebook page, in a footer or in a commit message.
+A Codex is kept during the work and read after it.
+
+While the work is under way, the Codex asks one question at each sitting: what am I doing? The maker writes the phase the work is in and the domains it is in now. When the work is done, the same line shows how it was made.
 
 ```
-/Æ/#|●▼||▲◆|||▶⬢⟩⟩[projects.versograms.cherubrock]/
+#∴□|◇||⬠|||∴>
 ```
+
+## The three phases
+
+Every work passes through three phases, in order. The cycle begins again with the next work.
+
+1. **Deconstruction.** The input: research and intake, reading, gathering.
+2. **Iteration.** The working: sketching, designing, trying again.
+3. **Synthesis.** The output: finishing, production, post.
 
 ## The marks
 
 | Mark | Meaning |
 |------|---------|
-| `/ … /` | Opens and closes the Codex |
-| `Æ` | Marks the line as a Codex |
-| `#` | The first cut: where the work begins |
-| <code>&#124;</code> <code>&#124;&#124;</code> <code>&#124;&#124;&#124;</code> | First, second and third phase, and so on |
-| `●` | Study |
-| `∅` | A phase in which no domain was active |
-| `▲ ▼ ◀ ▶ ■ ◆ ⬟ ⬢` | The domains active in that phase, from [Part II]({{ '/doctrine/glyphs/' | relative_url }}) |
-| `⟩` | Finished, not released |
-| `⟩⟩` | Finished and released |
-| `~` | Ongoing, with no end |
-| `×` | Abandoned |
-| `[ … ]` | The work's name, its parts separated by dots |
+| `#` | The grid: the structure beneath the work. Every Codex opens on it. |
+| `∴` | The seal. It is set after the grid, and again before the output when the work is finished. |
+| `△ ▽ ◁ ▷ □ ◇ ⬠ ⬡` | The domains active in a phase, from [Part II]({{ '/doctrine/glyphs/' | relative_url }}), written before the bars that close it |
+| <code>&#124;</code> | Closes Deconstruction |
+| <code>&#124;&#124;</code> | Closes Iteration |
+| <code>&#124;&#124;&#124;</code> | Closes Synthesis |
+| `>` | The output. It closes a finished Codex. |
 
 ## The rules
 
-1. A Codex opens with `#` and closes with one of the four end marks: `⟩`, `⟩⟩`, `~` or `×`.
-2. It holds one phase or more.
-3. Within a phase, glyphs are written in the order each domain first became active.
-4. `●` may stand alone in a phase or come before the domain glyphs.
-5. `∅` may stand in a phase but may not close the Codex.
-6. A Codex has no spaces.
+1. A Codex holds the three phases, in order, each closed by its bars.
+2. Within a phase, glyphs are written in the order the domains became active.
+3. A domain may appear in more than one phase.
+4. A work draws on at least two domains.
+5. A Codex has no spaces.
+6. A phase the work skipped is written as its bars alone.
+7. Only a finished work closes with `∴>`. An unfinished Codex ends after the last phase it reached.
 
-## Reading a Codex
+## Written as the work goes
 
-A glyph that appears in more than one phase marks a domain the work came back to. `▶` in the first phase and again in the third means the drawing was sketched early and finished late. A Codex that opens with `●` began with study.
+The line grows with the work. Nothing is written ahead of it, and nothing is rewritten after.
 
-Read from the start, a Codex gives the order the work was done in. Read from the end, it traces a finished work back to where it began.
-
-## Examples
-
-Three phases, released:
+Still in Iteration:
 
 ```
-/Æ/#|●▼||▲◆|||▶⬢⟩⟩[projects.versograms.cherubrock]/
+#∴□|◇
 ```
 
-Study only, ongoing:
+Set down after Iteration:
 
 ```
-/Æ/#|●||●|||●~[systems.signals]/
+#∴□|◇||
 ```
 
-Finished and released:
+Finished:
 
 ```
-/Æ/#|●||▲⬢|||⬢⟩⟩[systems.savepoint.protocol]/
+#∴□|◇||⬠|||∴>
 ```
 
-Two empty phases, then drawing, released:
+Finished, with no Deconstruction:
 
 ```
-/Æ/#|∅||∅|||▶⟩⟩[studies.miniposters.oneoff]/
+#∴|□◇||⬠|||∴>
+```
+
+## Weight
+
+Every glyph is written in outline, and a finished Codex is kept exactly as it was written. A domain's weight shows in recurrence: the more often its glyph appears across the phases, the more central it was to the work. More than one domain can be central.
+
+```
+#∴□△|□◇||□⬠|||∴>
+```
+
+Design runs through every phase of this work. Systems, Craft and Photography each came in once.
+
+## Where the Codex is set
+
+A Codex belongs to the work and carries no name. The work's title, page or file names it. Beside the work, the line is set after the word Codex:
+
+```
+Codex  #∴□|◇||⬠|||∴>
 ```
