@@ -47,6 +47,18 @@ $toner: #{"url('../texture/toner.webp')"}; // interpolated for the old Sass on G
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+// Phones: no tap flash (presses get their own instant invert below), no font inflation in landscape
+html { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; }
+
+a, button, [role=button] { touch-action: manipulation; } // no double-tap-zoom wait
+
+// Controls, not content: a long press shouldn't select the label or pop the link callout
+.runhead a, .next, .home-parts a, .foot-links a {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
 body {
   font-family: $font;
   background: $paper;
@@ -59,7 +71,12 @@ a {
   color: $ink;
   text-decoration: underline;
   text-underline-offset: 2px;
-  &:hover { background: $ink; color: $paper; text-decoration: none; }
+  // Hover only where there is a mouse, so a tap doesn't leave a link stuck inverted;
+  // a press inverts instantly on every input
+  @media (hover: hover) and (pointer: fine) {
+    &:hover { background: $ink; color: $paper; text-decoration: none; }
+  }
+  &:active { background: $ink; color: $paper; text-decoration: none; }
 }
 
 :focus-visible { outline: 2px solid $ink; outline-offset: 3px; }
@@ -75,7 +92,11 @@ a {
 
 .stage {
   min-height: 100vh;
+  min-height: 100svh;
   padding: 0 clamp(1.5rem, 4vw, 3rem);
+  // Clear the notch in landscape (env() is 0 everywhere else)
+  padding-left: #{"max(clamp(1.5rem, 4vw, 3rem), env(safe-area-inset-left, 0px))"};
+  padding-right: #{"max(clamp(1.5rem, 4vw, 3rem), env(safe-area-inset-right, 0px))"};
   max-width: $sheet;
   margin: 0 auto;
   position: relative;
@@ -116,6 +137,7 @@ a {
   gap: 1rem;
   align-items: baseline;
   padding: 1.5rem 0 0.75rem;
+  padding-top: #{"calc(1.5rem + env(safe-area-inset-top, 0px))"};
   border-bottom: 4px solid $ink;
 
   a { text-decoration: none; padding: 0.1rem 0.25rem; margin: -0.1rem -0.25rem; }
@@ -180,6 +202,7 @@ a {
 // running head, like the front cover of a tract; the contents begin on the next "page"
 .cover {
   position: relative;
+  min-height: calc(100vh - 3.7rem);
   min-height: calc(100svh - 3.7rem);
   display: grid;
   grid-template-columns: 5fr 7fr;
@@ -256,6 +279,7 @@ a {
     padding: 1rem;
     border: 2px solid $ink;
     overflow-x: auto;
+    overscroll-behavior: contain; // a sideways swipe at the end doesn't page back
     margin-bottom: 1.25rem;
 
     // A Codex line is the subject of the page: set large, like an inscription
@@ -347,7 +371,10 @@ a {
   font-size: 0.82rem;
 
   b { font-size: clamp(1.3rem, 2.4vw, 2rem); letter-spacing: -0.01em; }
-  &:hover { background: $ink; color: $paper; b { text-decoration: underline; } }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover { background: $ink; color: $paper; b { text-decoration: underline; } }
+  }
+  &:active { background: $ink; color: $paper; b { text-decoration: underline; } }
 }
 
 .doctrine-nav-footer {
@@ -371,6 +398,7 @@ a {
 // Footer
 .site-footer {
   padding: 1rem 0 2.5rem;
+  padding-bottom: #{"calc(2.5rem + env(safe-area-inset-bottom, 0px))"}; // clear the home indicator
   margin-top: 2.5rem;
   border-top: 1px solid $ink;
   box-shadow: 0 -5px 0 -1px $paper, 0 -6px 0 -1px $ink; // double rule
@@ -448,7 +476,11 @@ a {
 @media (max-width: $narrow) {
   body { font-size: 15px; }
 
-  .stage { padding: 0 16px; }
+  .stage {
+    padding: 0 16px;
+    padding-left: #{"max(16px, env(safe-area-inset-left, 0px))"};
+    padding-right: #{"max(16px, env(safe-area-inset-right, 0px))"};
+  }
 
   .runhead {
     grid-template-columns: 1fr auto;
@@ -475,7 +507,7 @@ a {
 
   .next { flex-direction: column; gap: 0.3rem; }
   .foot-links { flex-direction: column; }
-  .doctrine-content table { font-size: 0.75rem; display: block; overflow-x: auto; }
+  .doctrine-content table { font-size: 0.75rem; display: block; overflow-x: auto; overscroll-behavior: contain; }
 }
 
 // Motion: none. A copied tract is a still object, so the page doesn't move, and
